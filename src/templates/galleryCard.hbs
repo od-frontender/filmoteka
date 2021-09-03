@@ -1,0 +1,11 @@
+{{#each this}}
+
+{{!-- {Movie List Result Object} from https://developers.themoviedb.org/3/trending/get-trending --}}
+
+<li class="movies__list-item">
+    <img class="movie__poster" src="{{poster_path}}" alt="{{title}} poster" id="{{id}}" loading="lazy">
+
+    <p class=" movie__name">{{title}}</p>
+    <p class="movie__genre">{{genre_ids}} | {{release_date}}</p>
+</li>
+{{/each}}
