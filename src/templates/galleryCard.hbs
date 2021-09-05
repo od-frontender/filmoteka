@@ -1,0 +1,15 @@
+{{#each this.results}}
+  <li class='movies__list-item' id='{{id}}'>
+    <img
+      class='movie__poster'
+      src='https://image.tmdb.org/t/p/w500/{{poster_path}}'
+      alt='{{title}}'
+      loading='lazy'
+    />
+    <p class='movie__name'>{{title}}</p>
+    <p class='movie__genre'>{{genres.name}}
+      |
+      {{release_date}}
+      <span class='movie__rating'>{{vote_average}}</span></p>
+  </li>
+{{/each}}
