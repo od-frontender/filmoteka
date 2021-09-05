@@ -1,17 +1,9 @@
-{{#each this.results}}
-  <li class='movies__list-item' id='{{id}}'>
-    <img
-      class='movie__poster'
-      src='https://image.tmdb.org/t/p/w500/{{poster_path}}'
-      alt='{{title}}'
-      loading='lazy'
-    />
-    <p class='movie__name'>{{title}}</p>
-    <p class='movie__genre'>{{ganre_ids}}
-      |
-      {{release_date}}
-      <span class='movie__rating'>{{vote_average}}</span></p>
-  </li>
+{{#each this}}
+<li class='movies__list-item' id='{{id}}'>
+  <img class='movie__poster' src='https://image.tmdb.org/t/p/w500/{{poster_path}}' alt='{{title}}' loading='lazy' />
+  <p class='movie__name'>{{title}}</p>
+  <p class='movie__genre'>{{genre_ids}} | {{release_date}}
+    <span class='movie__rating'>{{vote_average}}</span>
+  </p>
+</li>
 {{/each}}
-
-
