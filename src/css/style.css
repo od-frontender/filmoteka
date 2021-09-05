@@ -1,0 +1,249 @@
+    /*=================================================================BASE========================================*/
+    
+    html {
+        overflow-x: hidden;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        margin: 0;
+    }
+    
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+    }
+    
+    img {
+        display: block;
+    }
+    
+    .body {
+        margin: 0;
+    }
+    
+    .link {
+        text-decoration: none;
+    }
+    
+    .list {
+        list-style: none;
+    }
+    /*==========================================================================================================*/
+    /*================================HEADER====================================================================*/
+    /*============================================LOGO==========================================================*/
+    
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    
+    @media screen and (min-width: 480px) {
+        .container {
+            width: 480px;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        .container {
+            width: 768px;
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        .container {
+            width: 1200px;
+        }
+    }
+    
+    .text {
+        display: none;
+    }
+    
+    .logo-item {
+        display: flex;
+        padding-left: 71px;
+    }
+    
+    .logo-list {
+        padding-left: 10px;
+    }
+    
+    .header-item {
+        display: flex;
+        padding-top: 50px;
+    }
+    
+    .header-link {
+        display: flex;
+        margin-left: auto;
+        padding-right: 71px;
+        padding-top: 14px;
+    }
+    
+    .link-list:not(last-child) {
+        padding-right: 39px;
+    }
+    
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    /* .text {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+    } */
+    
+    .header {
+        background-color: #0000008F;
+        background-image: url(../images/Rectangle-1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .logo-img {
+        padding-top: 6px;
+    }
+    
+    .link-text {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        /* identical to box height */
+        display: flex;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    
+    .current {
+        position: relative;
+        color: #FF6B08;
+    }
+    
+    .current::after {
+        position: absolute;
+        content: '';
+        display: inline;
+        width: 70px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #FF6B08;
+    }
+    /*=========================================================SEARCH=============================================*/
+    
+    .search-item {
+        width: 336px;
+        display: flex;
+        padding-top: 41px;
+        margin: auto;
+        padding-bottom: 97px;
+    }
+    
+    .search-input {
+        color: #916a6a;
+        width: 280px;
+        background-color: rgba(0, 0, 0, 0, 1);
+        height: 16px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #FFFFFF;
+    }
+    
+    .search-img {
+        width: 12px;
+        height: 12px;
+        padding-top: 1px;
+        background-color: none;
+        fill: #FFFFFF;
+    }
+    
+    .btn-search {
+        background-color: transparent;
+        background-size: 0%;
+        border: none;
+        border-bottom: 1px solid #FFFFFF;
+    }
+    /*=======================================================FOOTER===============================*/
+    
+    .svg-footer {
+        fill: #FF4500;
+        width: 14px;
+        height: 12px;
+        padding-right: 10px;
+    }
+    
+    .footer-item {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .footer-text {
+        padding-right: 10px;
+    }
+    
+    .footers-text {
+        padding-right: 3px;
+    }
+    
+    .footer {
+        background-color: #F7F7F7;
+    }
+    
+    .link-footer {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        /* identical to box height */
+        display: flex;
+        align-items: center;
+        color: #545454;
+    }
+    
+    @media screen and (min-width:768px) {
+        .text {
+            display: block;
+        }
+        .text {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 35px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .search-input {
+            color: #916a6a;
+            width: 320px;
+            background-color: rgba(0, 0, 0, 0, 1);
+            height: 16px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #FFFFFF;
+        }
+    }
