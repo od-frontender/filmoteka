@@ -10,6 +10,7 @@ function fetchPopularFilms() {
     })
     .catch(err => console.log(err));
 }
+export default fetchPopularFilms;
 // Запрос на получения жанров фильмов
 function fetchGenres() {
   return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
@@ -19,5 +20,3 @@ function fetchGenres() {
     })
     .catch(err => console.log(err));
 }
-
-export default fetchPopularFilms;

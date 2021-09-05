@@ -1,5 +1,6 @@
 import movieTpl from '../templates/galleryCard.hbs';
 import fetchPopularFilms from './apiService';
+import fetchGenres from './apiService';
 import refs from './refs';
 
 // Функция выводит список пополярных фильмов на основную старницу
