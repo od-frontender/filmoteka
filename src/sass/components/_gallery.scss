@@ -10,6 +10,11 @@
   font-size: 12px;
   line-height: 1.33;
 }
+
+.movies__list {
+  list-style: none;
+}
+
 .movie__poster {
   width: 280px;
   height: 398px;
@@ -28,6 +33,17 @@
 }
 .movie__genre {
   color: $accent-color;
+}
+
+.movie__rating{
+    display: inline-block;
+    text-align: center;
+    width: 36px;
+    height: 16px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: $accent-color;
+    color: #FFFFFF;
 }
 @media screen and (max-width: 767px) {
   .movies__list-item:not(:last-child) {
