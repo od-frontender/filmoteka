@@ -1,5 +1,5 @@
 const refs = {
-  moviesItemElt: document.querySelector('.movies__list'),
+  moviesItemElt: document.querySelector('.movies__list-item'),
   backdropElt: document.querySelector('.backdrop'),
   closeModalBtnElt: document.querySelector('.modal-close'),
 };
