@@ -1,4 +1,8 @@
 @import './utils/variables';
+
+@import './base/reset-styles';
+
 @import './components/gallery';
 @import './components/backdrop';
+@import './components/modal-card';
 @import './components/buttonOnTop';
