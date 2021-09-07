@@ -18,7 +18,9 @@ module.exports=[{backdrop_path:"/pUc51UUQb1lMLVVkDCaZVsCo37U.jpg",genre_ids:[53,
 "use strict";var e=u(require("../templates/galleryCard.hbs")),r=u(require("./apiService")),n=u(require("./Data/genresData")),t=u(require("./Data/moviesObjectData.json")),a=u(require("./refs"));function u(e){return e&&e.__esModule?e:{default:e}}function i(e){return e.map(e=>({...e,genre_ids:e.genre_ids.length?[...n.default.reduce((r,{id:n,name:t})=>e.genre_ids.includes(+n)?[...r,t].slice(0,3):r,[])]:["Unknown"]}))}function s(){(0,r.default)().then(e=>{l(i(e.results))})}function l(r){const n=(0,e.default)(r);a.default.gallery.innerHTML=n}console.log({genres:n.default}),s();
 },{"../templates/galleryCard.hbs":"B7cY","./apiService":"eQwa","./Data/genresData":"G5Zj","./Data/moviesObjectData.json":"VSOd","./refs":"VyiV"}],"oNys":[function(require,module,exports) {
 $(window).on("scroll",function(){$(this).scrollTop()>100?$("#buttonOnTop").is(":hidden")&&$("#buttonOnTop").css({opacity:1}).fadeIn("slow"):$("#buttonOnTop").stop(!0,!1).fadeOut("fast")}),$("#buttonOnTop").on("click",function(){$("html, body").stop().animate({scrollTop:0},300)});
+},{}],"RSqK":[function(require,module,exports) {
+const e={moviesListElt:document.querySelector(".movies__list"),moviesItemElt:document.querySelector(".movies__list-item"),backdropElt:document.querySelector(".backdrop"),closeModalBtnElt:document.querySelector(".modal-close")};function t(t){t.currentTarget!==t.target&&(e.backdropElt.classList.add("show-modal"),console.dir(t.target),console.dir(t.currentTarget),console.dir(t.currentTarget.children[0].id)),window.addEventListener("keydown",c)}function o(t){e.backdropElt.classList.remove("show-modal"),window.removeEventListener("keydown",c)}function r(e){e.currentTarget===e.target&&o()}function c(e){"Escape"===e.code&&o()}e.moviesListElt.addEventListener("click",t),e.backdropElt.addEventListener("click",r);
 },{}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop");
-},{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.49c27911.js.map
+"use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop"),require("./js/modal");
+},{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys","./js/modal":"RSqK"}]},{},["Focm"], null)
+//# sourceMappingURL=/filmoteka/src.285d37b7.js.map
