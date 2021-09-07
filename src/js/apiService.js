@@ -11,12 +11,21 @@ function fetchPopularFilms() {
     .catch(err => console.log(err));
 }
 export default fetchPopularFilms;
+
 // Запрос на получения жанров фильмов
 function fetchGenres() {
   return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
     .then(res => res.json())
     .then(res => {
-      return console.log(res);
+      return res;
     })
     .catch(err => console.log(err));
+}
+// Запрос на получение полной информации о фильме
+function fetchAllInfoAboutFilm(movie_id) {
+  return fetch(`${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}&language=en-US`)
+    .then(res => res.json())
+    .then(res => {
+      return res;
+    });
 }
