@@ -6,7 +6,7 @@
   padding: 20px 20px 40px 20px;
   font-family: $main-font;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
 }
@@ -15,31 +15,45 @@
   list-style: none;
 }
 
+.movies__list-item {
+  // width: 280px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+  &:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0px 0px 15px 5px grey;
+  }
+}
+
 .movie__poster {
   width: 280px;
   height: 398px;
   display: block;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  width: 100%;
+  // margin-bottom: 10px;
   border-radius: 5px;
-  transition: all 0.4s ease;
-  &:hover {
-    transform: scale(1.03) translateY(-4px);
-    box-shadow: 0px 0px 10px 5px $accent-color;
-  }
+
 }
 
 .movie__name {
+  padding: 0 5px;
+  margin: 0;
   text-transform: uppercase;
 }
 .movie__genre {
+  padding: 0 5px;
+  margin: 0 0 5px;
   color: $accent-color;
 }
 
 .movie__rating{
-    display: inline-block;
-    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 36px;
     height: 16px;
+    padding: 1px;
     margin-left: 10px;
     border-radius: 5px;
     background-color: $accent-color;
