@@ -13,10 +13,10 @@ module.exports=[{id:"28",name:"Action"},{id:"12",name:"Adventure"},{id:"16",name
 },{}],"VyiV":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e={gallery:document.querySelector(".movies__list")};var t=e;exports.default=t;
 },{}],"QdeU":[function(require,module,exports) {
-"use strict";var e=u(require("../templates/galleryCard.hbs")),r=u(require("./apiService")),n=u(require("./Data/genresData.json")),t=u(require("./refs"));function u(e){return e&&e.__esModule?e:{default:e}}function a(e){return e.map(e=>({...e,genre_ids:e.genre_ids.length?[...n.default.reduce((r,{id:n,name:t})=>e.genre_ids.includes(+n)?[...r,t]:r,[])]:["Жанры отсутствуют"]}))}function i(){(0,r.default)().then(e=>{s(a(e.results))})}function s(r){const n=(0,e.default)(r);t.default.gallery.innerHTML=n}i();
+"use strict";var e=u(require("../templates/galleryCard.hbs")),r=u(require("./apiService")),n=u(require("./Data/genresData.json")),t=u(require("./refs"));function u(e){return e&&e.__esModule?e:{default:e}}function i(e){return e.map(e=>({...e,genre_ids:e.genre_ids.length?[...n.default.reduce((r,{id:n,name:t})=>e.genre_ids.includes(+n)?[...r,t].slice(0,3):r,[])]:["Unknown"]}))}function a(){(0,r.default)().then(e=>{s(i(e.results))})}function s(r){const n=(0,e.default)(r);t.default.gallery.innerHTML=n}a();
 },{"../templates/galleryCard.hbs":"B7cY","./apiService":"eQwa","./Data/genresData.json":"G5Zj","./refs":"VyiV"}],"oNys":[function(require,module,exports) {
 $(window).on("scroll",function(){$(this).scrollTop()>100?$("#buttonOnTop").is(":hidden")&&$("#buttonOnTop").css({opacity:1}).fadeIn("slow"):$("#buttonOnTop").stop(!0,!1).fadeOut("fast")}),$("#buttonOnTop").on("click",function(){$("html, body").stop().animate({scrollTop:0},300)});
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop");
 },{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.16cc5adf.js.map
+//# sourceMappingURL=/filmoteka/src.e478505d.js.map
