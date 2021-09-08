@@ -1,8 +1,22 @@
+// BASE
+@import './base/container';
+@import './base/reset-styles';
+@import './base/section';
+
+// COMPONENTS
+@import './components/backdrop';
+@import './components/buttonOnTop';
+@import './components/gallery';
+@import './components/modal-card';
+
+// LAYOUT
+
+// UTILS
 @import './utils/variables';
 
-@import './base/reset-styles';
 
-@import './components/gallery';
-@import './components/backdrop';
-@import './components/modal-card';
-@import './components/buttonOnTop';
+
+
+
+
+
