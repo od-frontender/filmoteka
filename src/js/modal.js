@@ -12,7 +12,7 @@ function onOpenModal(e) {
   e.preventDefault();
   if (e.currentTarget !== e.target) {
     refs.backdropElt.classList.add('show-modal');
-    API.fetchAllInfoAboutFilm(e.target.parentNode.parentNode.id).then(response => {
+    apiService.fetchAllInfoAboutFilm(e.target.parentNode.parentNode.id).then(response => {
       renderMovieCard(response);
     });
   }
