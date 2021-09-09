@@ -4,7 +4,7 @@ import modalCard from '../templates/modal-card.hbs';
 const apiService = new API();
 
 refs.gallery.addEventListener('click', onOpenModal);
-// refs.closeModalBtnElt.addEventListener('click', onCloseModal);
+refs.closeModalBtnElt.addEventListener('click', onCloseModal);
 refs.backdropElt.addEventListener('click', onBackdropClick);
 
 // открытие модального окна
@@ -12,7 +12,7 @@ function onOpenModal(e) {
   e.preventDefault();
   if (e.currentTarget !== e.target) {
     refs.backdropElt.classList.add('show-modal');
-    API.fetchAllInfoAboutFilm(e.target.parentNode.parentNode.id).then(response => {
+    apiService.fetchAllInfoAboutFilm(e.target.parentNode.parentNode.id).then(response => {
       renderMovieCard(response);
     });
   }
