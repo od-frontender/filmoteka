@@ -1,7 +1,9 @@
 import movieTpl from '../templates/galleryCard.hbs';
-import fetchPopularFilms from './apiService';
-import genres from './Data/genresData.json';
+import genres from './Data/genresData';
 import refs from './refs';
+import API from './apiService';
+
+const apiService = new API();
 
 // Функция парсит жанры для карточки галлереи
 function parseGenres(array) {
@@ -10,24 +12,45 @@ function parseGenres(array) {
     genre_ids: el.genre_ids.length
       ? [
           ...genres.reduce(
-            (acc, { id, name }) => (el.genre_ids.includes(+id) ? [...acc, name] : acc),
+            (acc, { id, name }) => (el.genre_ids.includes(+id) ? [...acc, name].slice(0, 3) : acc),
             [],
           ),
         ]
-      : ['Жанры отсутствуют'],
+      : ['Unknown'],
   }));
 }
 
+// Тестовая функция, нужно доделать
+// Функция парсит дату и заголовок для карточки галлереи
+// function parseMoviesObject(array) {
+//   array.forEach(elem => {
+//     elem.release_date
+//       ? (elem.release_date = elem.release_date.slice(0, 4))
+//       : (elem.release_date = 'Unknown');
+//   });
+
+//   return array.map(el => ({
+//     ...el,
+//     genre_ids: el.genre_ids.length
+//       ? [
+//           ...genres.reduce(
+//             (acc, { id, name }) => (el.genre_ids.includes(+id) ? [...acc, name] : acc),
+//             [],
+//           ),
+//         ]
+//       : ['Unknown'],
+//   }));
+// }
 
 // Функция выводит список популярных фильмов на основную старницу
 function showGallery() {
-  const filmsData = fetchPopularFilms();
-  filmsData.then(response => {
+  apiService.fetchPopularFilms().then(response => {
     const parsedData = parseGenres(response.results);
     renderMoviesList(parsedData);
   });
 }
 showGallery();
+
 // Функция рендерит карточки фильмов на основной странице
 function renderMoviesList(response) {
   const markup = movieTpl(response);

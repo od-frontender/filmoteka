@@ -1,4 +1,20 @@
-@import './utils/variables';
-@import './components/gallery';
+@import './base/common';
+@import './layout/footer';
+@import './layout/header-search';
+@import './layout/logo';
+
+// BASE
+@import './base/container';
+@import './base/reset-styles';
+@import './base/section';
+
+// COMPONENTS
 @import './components/backdrop';
 @import './components/buttonOnTop';
+@import './components/gallery';
+@import './components/modal-card';
+
+// LAYOUT
+
+// UTILS
+@import './utils/variables';

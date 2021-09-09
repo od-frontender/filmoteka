@@ -1,24 +1,34 @@
-const refs = {
-  moviesItemElt: document.querySelector('.movies__list'),
-  backdropElt: document.querySelector('.backdrop'),
-  closeModalBtnElt: document.querySelector('.modal-close'),
-};
+import refs from './refs';
+import API from './apiService';
+import modalCard from '../templates/modal-card.hbs';
+const apiService = new API();
 
-refs.moviesItemElt.addEventListener('click', onOpenModal);
-refs.closeModalBtnElt.addEventListener('click', onCloseModal);
+refs.gallery.addEventListener('click', onOpenModal);
+// refs.closeModalBtnElt.addEventListener('click', onCloseModal);
 refs.backdropElt.addEventListener('click', onBackdropClick);
 
 // открытие модального окна
 function onOpenModal(e) {
+  e.preventDefault();
+  if (e.currentTarget !== e.target) {
+    refs.backdropElt.classList.add('show-modal');
+    apiService.fetchAllInfoAboutFilm(e.target.parentNode.parentNode.id).then(response => {
+      renderMovieCard(response);
+    });
+  }
   window.addEventListener('keydown', onEscKeyDown);
-  refs.backdropElt.classList.add('show-modal');
+}
+// рендер разметки карточки в backdrop
+function renderMovieCard(response) {
+  const markupCard = modalCard(response);
+  refs.backdropElt.innerHTML = markupCard;
 }
 
 // закрытие модального окна по клику на кнопку закрытия
 function onCloseModal(e) {
-  window.removeEventListener('keydown', onEscKeyDown);
+  refs.backdropElt.innerHTML = '';
   refs.backdropElt.classList.remove('show-modal');
-  // const
+  window.removeEventListener('keydown', onEscKeyDown);
 }
 
 // закрытие модального окна по клику на бекдроп
