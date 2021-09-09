@@ -4,6 +4,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 export default class API {
   constructor() {
     this.searchQuery = '';
+    this.page = 1;
   }
   // Запрос на популярные фильмы основной страницы
   fetchPopularFilms() {
@@ -30,6 +31,17 @@ export default class API {
       .then(res => res.json())
       .then(res => {
         return res;
-      });
+      })
+      .catch(err => console.log(err));
+  }
+  fetchFilmsToId(query) {
+    return fetch(
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`,
+    )
+      .then(res => res.json())
+      .then(res => {
+        return res;
+      })
+      .catch(err => console.log(err));
   }
 }
