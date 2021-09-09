@@ -4,7 +4,7 @@ import modalCard from '../templates/modal-card.hbs';
 const apiService = new API();
 
 refs.gallery.addEventListener('click', onOpenModal);
-refs.closeModalBtnElt.addEventListener('click', onCloseModal);
+// refs.closeModalBtnElt.addEventListener('click', onCloseModal);
 refs.backdropElt.addEventListener('click', onBackdropClick);
 
 // открытие модального окна
