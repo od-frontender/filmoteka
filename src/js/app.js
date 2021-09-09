@@ -3,6 +3,8 @@ import genres from './Data/genresData';
 import refs from './refs';
 import API from './apiService';
 
+const apiService = new API();
+
 // Функция парсит жанры для карточки галлереи
 function parseGenres(array) {
   return array.map(el => ({
@@ -42,7 +44,7 @@ function parseGenres(array) {
 
 // Функция выводит список популярных фильмов на основную старницу
 function showGallery() {
-  API.fetchPopularFilms().then(response => {
+  apiService.fetchPopularFilms().then(response => {
     const parsedData = parseGenres(response.results);
     renderMoviesList(parsedData);
   });

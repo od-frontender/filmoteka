@@ -1,6 +1,7 @@
 import refs from './refs';
 import API from './apiService';
 import modalCard from '../templates/modal-card.hbs';
+const apiService = new API();
 
 refs.gallery.addEventListener('click', onOpenModal);
 // refs.moviesItemElt.addEventListener('click', onOpenModal);
@@ -15,7 +16,7 @@ refs.backdropElt.addEventListener('click', onBackdropClick);
 //   }
 //   const filmId = e.target.parentNode.parentElement.id;
 
-//   API.fetchAllInfoAboutFilm(filmId).then(response => {
+//   apiService.fetchAllInfoAboutFilm(filmId).then(response => {
 //     renderMoviesCard(response);
 //   });
 
