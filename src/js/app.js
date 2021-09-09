@@ -1,9 +1,7 @@
 import movieTpl from '../templates/galleryCard.hbs';
-import fetchPopularFilms from './apiService';
 import genres from './Data/genresData';
-import moviesObject from './Data/moviesObjectData.json';
 import refs from './refs';
-console.log({ genres });
+import API from './apiService';
 
 // Функция парсит жанры для карточки галлереи
 function parseGenres(array) {
@@ -44,8 +42,7 @@ function parseGenres(array) {
 
 // Функция выводит список популярных фильмов на основную старницу
 function showGallery() {
-  const filmsData = fetchPopularFilms();
-  filmsData.then(response => {
+  API.fetchPopularFilms().then(response => {
     const parsedData = parseGenres(response.results);
     renderMoviesList(parsedData);
   });

@@ -10,7 +10,6 @@ function fetchPopularFilms() {
     })
     .catch(err => console.log(err));
 }
-export default fetchPopularFilms;
 
 // Запрос на получения жанров фильмов
 function fetchGenres() {
@@ -29,3 +28,4 @@ function fetchAllInfoAboutFilm(movie_id) {
       return res;
     });
 }
+export default { fetchPopularFilms, fetchGenres, fetchAllInfoAboutFilm };
