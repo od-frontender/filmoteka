@@ -1,3 +1,8 @@
+@import './base/common';
+@import './layout/footer';
+@import './layout/header-search';
+@import './layout/logo';
+
 // BASE
 @import './base/container';
 @import './base/reset-styles';
@@ -13,10 +18,3 @@
 
 // UTILS
 @import './utils/variables';
-
-
-
-
-
-
-

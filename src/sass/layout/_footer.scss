@@ -1,0 +1,38 @@
+.svg-footer {
+    fill: #FF4500;
+    width: 14px;
+    height: 12px;
+    padding-right: 10px;
+}
+
+.footer-item {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-text {
+    padding-right: 10px;
+}
+
+.footers-text {
+    padding-right: 3px;
+}
+
+.footer {
+    background-color: #F7F7F7;
+}
+
+.link-footer {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #545454;
+}
