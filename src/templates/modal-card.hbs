@@ -29,7 +29,14 @@
             <span class='votes'>{{vote_count}}</span></li>
           <li class='modal-info__value-item'>{{popularity}}</li>
           <li class='modal-info__value-item'>{{original_title}}</li>
-          <li class='modal-info__value-item'>{{genres.name}}</li>
+          <li class='modal-info__value-item'>
+            {{#if genres}}
+            {{#each genres}}
+            <span>{{this.name}}{{#unless @last}},{{/unless}}</span>
+            {{/each}}
+            {{else}}<span>N/A</span>
+            {{/if}}
+          </li>
         </ul>
       </ul>
 
