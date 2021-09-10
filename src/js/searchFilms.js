@@ -1,36 +1,26 @@
 import refs from './refs';
 import API from './apiService';
-import galleryCard from '../templates/galleryCard.hbs'
+import galleryCard from '../templates/galleryCard.hbs';
 
 const apiService = new API();
 
 refs.searchForm.addEventListener('input', onSearchFilms);
 
+function onSearchFilms(e) {
+  e.preventDefault();
 
-
-
-function addFilmsMarkup(data) {
-    if (data.length !== 0) {
-        const markup = galleryCard(data);
-        refs.gallery.insertAdjacentHTML('beforeend', markup);
-    }
+  const value = e.target.value;
+  console.log(value);
+  refs.gallery.innerHTML = '';
+  apiService.fetchFilmsToId(value).then(res => {
+    addFilmsMarkup(res.results);
+  });
 }
 
-function onSearchFilms(evt) {
-    evt.preventDefault();
-
-    const value = evt.target.value;
-    console.log(value);
-    // apiService.searchQuery = value;
-    refs.gallery.innerHTML = '';
-    apiService.fetchFilmsToId(value).then(addFilmsMarkup);
+function addFilmsMarkup(query) {
+  const markup = galleryCard(query);
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
-
-
-
-
-
-
 
 // function addFilmsMarkup(films) {
 //     refs.gallery.insertAdjacentHTML('beforeend', galleryCard(films));
@@ -43,7 +33,7 @@ function onSearchFilms(evt) {
 
 //     if (search === '') {
 //         apiService.resetPage();
-        
+
 //     return;
 //     }
 
