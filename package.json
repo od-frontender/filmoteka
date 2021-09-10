@@ -29,6 +29,7 @@
     "@pnotify/core": "^5.2.0",
     "basiclightbox": "^5.0.4",
     "default-passive-events": "^2.0.0",
+    "infinite-scroll": "^4.0.1",
     "native-toast": "^2.0.0"
   }
 }

@@ -4,5 +4,6 @@ const refs = {
   backdropElt: document.querySelector('.backdrop'),
   closeModalBtnElt: document.querySelector('.modal-close'),
   modal: document.querySelector('#modal-window'),
+  sentinel: document.querySelector('#sentinel'),
 };
 export default refs;
