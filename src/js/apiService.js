@@ -12,7 +12,8 @@ export default class API {
       query: this.searchQuery,
       page: this.page,
     });
-    return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&${this.page}`)
+    const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
+    return fetch(url)
       .then(res => res.json())
       .then(res => {
         return res;
