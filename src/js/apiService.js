@@ -37,13 +37,15 @@ export default class API {
   }
 
   // Запрос на получения жанров фильмов
-  fetchGenres() {
-    return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
-      .then(res => res.json())
-      .then(res => {
-        return res;
-      })
-      .catch(err => console.log(err));
+  async fetchGenres() {
+    const url = `${BASE_URL}genre/movie/list?api_key=${API_KEY}&language=en-US`;
+    try {
+      const response = await fetch(url);
+      const { genres } = await response.json();
+      return genres;
+    } catch (error) {
+      console.log(error);
+    }
   }
   // Запрос на получение полной информации о фильме
   fetchAllInfoAboutFilm(movie_id) {

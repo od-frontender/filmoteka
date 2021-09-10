@@ -19,7 +19,6 @@ function parseGenres(array) {
       : ['Unknown'],
   }));
 }
-
 // Тестовая функция, нужно доделать
 // Функция парсит дату и заголовок для карточки галлереи
 // function parseMoviesObject(array) {
