@@ -4,8 +4,8 @@ import modalCard from '../templates/modal-card.hbs';
 const apiService = new API();
 
 refs.gallery.addEventListener('click', onOpenModal);
-// refs.closeModalBtnElt.addEventListener('click', onCloseModal);
 refs.backdropElt.addEventListener('click', onBackdropClick);
+// refs.closeModalBtnElt.addEventListener('click', onCloseModal);
 
 // открытие модального окна
 function onOpenModal(e) {
@@ -15,9 +15,12 @@ function onOpenModal(e) {
     apiService.fetchAllInfoAboutFilm(e.target.parentNode.parentNode.id).then(response => {
       renderMovieCard(response);
     });
+    refs.bodyElt.classList.add('fixed-body');
   }
+
   window.addEventListener('keydown', onEscKeyDown);
 }
+
 // рендер разметки карточки в backdrop
 function renderMovieCard(response) {
   const markupCard = modalCard(response);
@@ -28,6 +31,7 @@ function renderMovieCard(response) {
 function onCloseModal(e) {
   refs.backdropElt.innerHTML = '';
   refs.backdropElt.classList.remove('show-modal');
+  refs.bodyElt.classList.remove('fixed-body');
   window.removeEventListener('keydown', onEscKeyDown);
 }
 
