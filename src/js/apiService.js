@@ -8,12 +8,32 @@ export default class API {
   }
   // Запрос на популярные фильмы основной страницы
   fetchPopularFilms() {
-    return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
+    const searchParams = new URLSearchParams({
+      query: this.searchQuery,
+      page: this.page,
+    });
+    return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&${this.page}`)
       .then(res => res.json())
       .then(res => {
         return res;
       })
       .catch(err => console.log(err));
+  }
+
+  incrementPage() {
+    this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQuery) {
+    this.searchQuery = newQuery;
   }
 
   // Запрос на получения жанров фильмов

@@ -43,7 +43,7 @@ function parseGenres(array) {
 // }
 
 // Функция выводит список популярных фильмов на основную старницу
-function showGallery() {
+export default function showGallery() {
   apiService.fetchPopularFilms().then(response => {
     const parsedData = parseGenres(response.results);
     renderMoviesList(parsedData);
