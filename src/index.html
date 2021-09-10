@@ -20,74 +20,13 @@
     <title>Filmoteka</title>
   </head>
   <body>
-    <div id="buttonOnTop"></div>
-    <header class="header">
-      <div class="container">
-        <ul class="header-item">
-          <ul class="logo-item">
-            <li class="logo-list list">
-              <img class="logo-img" src="./images/film.png" alt="logo" />
-            </li>
-            <li class="logo-list list">
-              <p class="text">Filmoteka</p>
-            </li>
-          </ul>
-          <ul class="header-link">
-            <li class="link-list list current">
-              <a class="link link-text" href="index.html">HOME</a>
-            </li>
-            <li class="link-list list">
-              <a class="link link-text" href="">MY LIBRARY</a>
-            </li>
-          </ul>
-        </ul>
-        <form action="">
-          <ul class="search-item">
-            <li class="searh-list list">
-              <input class="search-input" type="text" placeholder="Поиск фильмов" />
-            </li>
-            <li class="searh-list list">
-              <button class="btn-search" type="submit">
-                <svg class="search-img">
-                  <use href="./images/symbol-defs.svg#icon-search"></use>
-                </svg>
-              </button>
-            </li>
-          </ul>
-        </form>
-      </div>
-    </header>
-
-    <!-- Gallery Section -->
-    <section class="section">
-      <div class="container">
-        <!-- <div class="backdrop"></div> -->
-        <ul class="list movies__list"></ul>
-      </div>
-    </section>
-    <!-- END Gallery Section -->
-
-    <footer class="footer">
-      <div class="container">
-        <ul class="footer-item">
-          <li class="list footer-text">
-            <p class="link-footer">© 2020 | All Rights Reserved | Developed with</p>
-          </li>
-          <li class="list">
-            <svg class="svg-footer">
-              <use href="./images/symbol-defs.svg#icon-heart"></use>
-            </svg>
-          </li>
-          <li class="list footers-text">
-            <p class="link-footer">by</p>
-          </li>
-          <li class="list">
-            <a class="link-footer" href="">GoIT Students</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-    <div class="backdrop"></div>
+    <include src="./partials/btn-on-top.html"></include>
+    <include src="./partials/header.html"></include>
+    <main>
+      <include src="./partials/gallery.html"></include>
+      <div class="backdrop"></div>
+    </main>
+    <include src="./partials/footer.html"></include>
     <script src="./index.js"></script>
   </body>
 </html>

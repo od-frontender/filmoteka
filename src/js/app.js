@@ -19,7 +19,6 @@ function parseGenres(array) {
       : ['Unknown'],
   }));
 }
-
 // Тестовая функция, нужно доделать
 // Функция парсит дату и заголовок для карточки галлереи
 // function parseMoviesObject(array) {
@@ -43,7 +42,7 @@ function parseGenres(array) {
 // }
 
 // Функция выводит список популярных фильмов на основную старницу
-function showGallery() {
+export default function showGallery() {
   apiService.fetchPopularFilms().then(response => {
     const parsedData = parseGenres(response.results);
     renderMoviesList(parsedData);
