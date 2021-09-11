@@ -1,8 +1,8 @@
 <div class='modal'>
   <button type='button' class='modal__close-button'>
-    <svg class='modal__close-icon' width='14' height='14'>
+    {{!-- <svg class='modal__close-icon' width='14' height='14'>
       <use href='../images/vector.svg'></use>
-    </svg>
+    </svg> --}}
   </button>
 
   <div class='modal-wrap'>
@@ -16,37 +16,41 @@
     <div class='modal-info'>
       <h2 class='modal-info__title'>{{title}}</h2>
 
-      <ul class='modal-info__double-column list'>
-        <ul class='modal-info__title-list list'>
-          <li class='modal-info__title-item'>Vote / Votes</li>
-          <li class='modal-info__title-item'>Popularity</li>
-          <li class='modal-info__title-item'>Original Title</li>
-          <li class='modal-info__title-item'>Genre</li>
-        </ul>
-        <ul class='modal-info__value-list list'>
-          <li class='modal-info__value-item'><span class='vote'>{{vote_average}}</span>
+      <ul class='modal-info__list list'>
+        <li class='modal-info__item'>
+          <p class='modal-info__title-item'>Vote / Votes</p>
+          <p class='modal-info__value-item'>
+            <span class='vote'>{{vote_average}}</span>
             /
-            <span class='votes'>{{vote_count}}</span></li>
-          <li class='modal-info__value-item'>{{popularity}}</li>
-          <li class='modal-info__value-item'>{{original_title}}</li>
-          <li class='modal-info__value-item'>
-            {{#if genres}}
+            <span class='votes'>{{vote_count}}</span>
+          </p>
+        </li>
+        <li class='modal-info__item'>
+          <p class='modal-info__title-item'>Popularity</p>
+          <p class='modal-info__value-item'>{{popularity}}</p>
+        </li>
+        <li class='modal-info__item'>
+          <p class='modal-info__title-item'>Original Title</p>
+          <p class='modal-info__value-item'>{{original_title}}</p>
+        </li>
+        <li class='modal-info__item'>
+          <p class='modal-info__title-item'>Genre</p>
+          <p class='modal-info__value-item'>{{#if genres}}
             {{#each genres}}
             <span>{{this.name}}{{#unless @last}},{{/unless}}</span>
             {{/each}}
             {{else}}<span>N/A</span>
-            {{/if}}
-          </li>
-        </ul>
+            {{/if}}</p>
+        </li>
       </ul>
 
       <h3 class='modal-info__description-title'>ABOUT</h3>
 
       <p class='modal-info__description'>{{overview}}</p>
 
-      <div class='modal-button'>
-        <button type='button' class='modal-button__watched'>ADD TO WATCHED</button>
-        <button type='button' class='modal-button__queue'>ADD TO QUEUE</button>
+      <div class='modal-buttons'>
+        <button type='button' class='modal-button'>ADD TO WATCHED</button>
+        <button type='button' class='modal-button'>ADD TO QUEUE</button>
       </div>
     </div>
   </div>
