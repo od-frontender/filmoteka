@@ -5,7 +5,6 @@ const apiService = new API();
 
 refs.gallery.addEventListener('click', onOpenModal);
 refs.backdropElt.addEventListener('click', onBackdropClick);
-// refs.closeModalBtnElt.addEventListener('click', onCloseModal);
 
 // открытие модального окна
 function onOpenModal(e) {
@@ -25,6 +24,8 @@ function onOpenModal(e) {
 function renderMovieCard(response) {
   const markupCard = modalCard(response);
   refs.backdropElt.innerHTML = markupCard;
+  const closeModalBtnElt = document.querySelector('.modal__close-button');
+  closeModalBtnElt.addEventListener('click', onCloseModal);
 }
 
 // закрытие модального окна по клику на кнопку закрытия
