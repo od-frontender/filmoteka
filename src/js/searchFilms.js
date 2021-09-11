@@ -1,10 +1,12 @@
 import refs from './refs';
 import API from './apiService';
 import galleryCard from '../templates/galleryCard.hbs';
+import showGallery from './app';
+var debounce = require('lodash.debounce');
 
 const apiService = new API();
 
-refs.searchForm.addEventListener('input', onSearchFilms);
+refs.searchForm.addEventListener('input', debounce(onSearchFilms, 800));
 
 function onSearchFilms(e) {
   e.preventDefault();
@@ -15,6 +17,11 @@ function onSearchFilms(e) {
   apiService.fetchFilmsToId(value).then(res => {
     addFilmsMarkup(res.results);
   });
+
+  if (value === '') {
+    showGallery();
+    return;
+  }
 }
 
 function addFilmsMarkup(query) {

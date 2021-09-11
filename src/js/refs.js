@@ -6,5 +6,6 @@ const refs = {
   modal: document.querySelector('#modal-window'),
   bodyElt: document.querySelector('body'),
   sentinel: document.querySelector('#sentinel'),
+  libraryBtn: document.querySelector('#library-button'),
 };
 export default refs;

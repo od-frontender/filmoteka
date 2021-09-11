@@ -1,9 +1,9 @@
 import API from './apiService.js';
 import refs from './refs';
-// import addFilmsMarkup from './searchFilms';
-import apiService from './app.js';
-// import showGallery from './app.js';
-// const apiService = new API();
+import addFilmsMarkup from './searchFilms';
+// import apiService from './app.js';
+import showGallery from './app.js';
+const apiService = new API();
 
 const onEntry = entries => {
   entries.forEach(entry => {
@@ -13,11 +13,11 @@ const onEntry = entries => {
         addFilmsMarkup(res);
         apiService.incrementPage();
       });
-      // showGallery();
-      // apiService.incrementPage();
+      showGallery();
+      apiService.incrementPage();
     }
   });
-}
+};
 
 const observer = new IntersectionObserver(onEntry, {
   rootMargin: '400px',
