@@ -12,7 +12,6 @@ function onSearchFilms(e) {
   e.preventDefault();
 
   const value = e.target.value;
-  console.log(value);
   refs.gallery.innerHTML = '';
   apiService.fetchFilmsToId(value).then(res => {
     addFilmsMarkup(res.results);
