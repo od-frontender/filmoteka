@@ -10,7 +10,7 @@ const apiService = new API();
 <<<<<<< Updated upstream
 refs.searchForm.addEventListener('input', debounce(onSearchFilms, 1000));
 =======
-refs.searchForm.addEventListener('submit', onSearchFilms);
+// refs.searchForm.addEventListener('submit', onSearchFilms);
 >>>>>>> Stashed changes
 
 function onSearchFilms(e) {
