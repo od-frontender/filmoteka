@@ -14,9 +14,9 @@
 .loader {
   width: 75px;
   height: 75px;
-  border: 10px solid rgba(13, 71, 161, 0.6);
+  border: 10px solid transparent;
   border-radius: 50%;
-  border-left-color: crimson;
+  border-left-color: #ff6b08;
   animation: loader 1.3s linear infinite;
 }
 
