@@ -1,6 +1,5 @@
 const wrapper = document.querySelector('.loader-wrapper');
 
-loadSpinner();
 
 function loadSpinner() {
   window.addEventListener('load', () => {
@@ -10,3 +9,6 @@ function loadSpinner() {
     }, 1000);
   });
 }
+
+
+loadSpinner();
