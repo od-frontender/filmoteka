@@ -1,15 +1,20 @@
-// забрал функцию (fetchAllInfoAboutFilm) с apiServie.js
-// которая делает запрос на получение полной информации о фильме
-
 import API from './apiService.js';
-// нужно сделать export default fetchAllInfoAboutFilm на apiServie.js
+import refs from './refs.js;';
+
 const apiService = new API();
 
-function addIntoWatch() {
-  localStorage.setItem('Queue', JSON.stringify(apiService.fetchAllInfoAboutFilm)); // <-- с apiServie.js
-  localStorage.setItem('Watched', JSON.stringify(apiService.fetchAllInfoAboutFilm)); //<-- с apiServie.js
+refs.modalButtonWatched.addEventListener('click', addIntoWatched);
+refs.modalButtonQueue.addEventListener('click', addIntoQueue);
+
+function addIntoWatched() {
+  localStorage.setItem('Watched', JSON.stringify(apiService.fetchAllInfoAboutFilm));
 }
-addIntoWatch();
+function addIntoQueue() {
+  localStorage.setItem('Queue', JSON.stringify(apiService.fetchAllInfoAboutFilm));
+}
+addIntoWatched();
+addIntoQueue();
+
 // получаем фильм в ОЧЕРЕДЬ (Queue)
 function getQueue() {
   const movieStorageId = localStorage.getItem('Queue');
