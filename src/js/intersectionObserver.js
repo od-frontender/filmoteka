@@ -1,10 +1,9 @@
-import API from './apiService.js';
+// import API from ‘./apiService.js’;
 import refs from './refs';
-// import addFilmsMarkup from './searchFilms';
-import apiService from './app.js';
-// import showGallery from './app.js';
+import addFilmsMarkup from './searchFilms';
+import apiService from './app';
+// import showGallery from ‘./app.js’;
 // const apiService = new API();
-
 const onEntry = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && apiService.query !== '') {
@@ -17,8 +16,7 @@ const onEntry = entries => {
       // apiService.incrementPage();
     }
   });
-}
-
+};
 const observer = new IntersectionObserver(onEntry, {
   rootMargin: '400px',
 });
