@@ -5,13 +5,9 @@ import showGallery from './app';
 import loadSpinner from './loader';
 var debounce = require('lodash.debounce');
 
-
-
 const apiService = new API();
 
 refs.searchForm.addEventListener('input', debounce(onSearchFilms, 1000));
-
-loadSpinner();
 
 function onSearchFilms(e) {
   e.preventDefault();
@@ -27,8 +23,6 @@ function onSearchFilms(e) {
     return;
   }
 }
-
-
 
 function addFilmsMarkup(query) {
   const markup = galleryCard(query);
