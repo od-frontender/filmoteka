@@ -6,7 +6,7 @@ var debounce = require('lodash.debounce');
 
 const apiService = new API();
 
-refs.searchForm.addEventListener('input', debounce(onSearchFilms, 800));
+refs.searchForm.addEventListener('input', debounce(onSearchFilms, 1000));
 
 function onSearchFilms(e) {
   e.preventDefault();
@@ -28,22 +28,3 @@ function addFilmsMarkup(query) {
   const markup = galleryCard(query);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
-
-// function addFilmsMarkup(films) {
-//     refs.gallery.insertAdjacentHTML('beforeend', galleryCard(films));
-// }
-
-// function searchFilms(event) {
-//     event.preventDefault();
-//     const search = event.currentTarget.elements.query.value.trim()
-//     apiService.searchQuery = search;
-
-//     if (search === '') {
-//         apiService.resetPage();
-
-//     return;
-//     }
-
-//     addFilmsMarkup(films);
-//     apiServices.resetPage();
-// }
