@@ -4,3 +4,4 @@ import './js/buttonOnTop';
 import './js/modal';
 import './js/intersectionObserver';
 import './js/searchFilms';
+import './js/loader';
