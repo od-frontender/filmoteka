@@ -30,6 +30,7 @@
     "basiclightbox": "^5.0.4",
     "default-passive-events": "^2.0.0",
     "infinite-scroll": "^4.0.1",
+    "lodash.debounce": "^4.0.8",
     "native-toast": "^2.0.0"
   }
 }
