@@ -94,11 +94,12 @@ img {
 
   font-size: 20px;
   line-height: 1.17;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 1024px) {
   .modal-info__title {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
@@ -114,6 +115,10 @@ img {
 
   &:not(:last-child) {
     margin-bottom: 10px;
+  }
+  
+  &:nth-child(3) p:last-child {
+    text-transform: uppercase;
   }
 }
 
@@ -141,6 +146,7 @@ img {
 
 .modal-info__description-title {
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .modal-info__description {
