@@ -1,4 +1,76 @@
-<header class="header">
+<header>
+  <div class="header__background">
+    <div class="header__container container">
+      <div class="header__wrapper">
+        
+        <!-- LOGO -->
+        <div class="logo-wrapper">
+          <a class="logo link" href="./index" aria-label="filmoteka logo">
+            <svg class="logo__icon" width="24" height="24">
+              <use href="./images/sprite.svg#film"></use>
+            </svg>
+            <span class="logo__text">Filmoteka </span>
+          </a>
+        </div>
+<!-- SITE NAVIGATION - HOME/LIBRARY BUTTONS -->
+        <nav class="site-nav">
+          <button
+            id="home-button"
+            class="header-button home-button current"
+            type="button"
+            aria-label="main page switch"
+          >
+            Home
+          </button>
+          <button
+            id="library-button"
+            class="header-button library-button"
+            type="button"
+            aria-label="library page switch"
+          >
+            My library
+          </button>
+        </nav>
+      </div>
+
+<!-- SEARCH-INPUT CONTAINER -->
+      <div class="search-container">
+        <span class="search__input-wrapper">
+          <svg
+            class="microphone"
+            width="40"
+            height="40"
+            aria-label="voice search"
+          >
+            <use href="./images/sprite.svg#microphone"></use>
+          </svg>
+
+          <input
+            class="search__input"
+            type="text"
+            name="search"
+            autocomplete="off"
+            aria-label="Search films "
+            placeholder="Поиск фильмов"
+            contenteditable
+          />
+        </span>
+      </div>
+
+      <!-- WATCHED/QUEUE BUTTONS -->
+      <div class="button-container "> <!-- оставила класс без visually-hidden для демонстрации -->
+        <button class="button watched-button" type="button">WATCHED</button>
+        <button class="button queue-button" type="button">QUEUE</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<!-- <header class="header">
   <div class="container">
     <ul class="header-item">
       <ul class="logo-item">
@@ -33,4 +105,4 @@
       </ul>
     </form>
   </div>
-</header>
+</header> -->

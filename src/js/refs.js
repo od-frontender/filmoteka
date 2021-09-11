@@ -1,6 +1,6 @@
 const refs = {
   gallery: document.querySelector('.movies__list'),
-  searchForm: document.querySelector('.search-input'),
+  searchForm: document.querySelector('.search__input'),
   backdropElt: document.querySelector('.backdrop'),
   closeModalBtnElt: document.querySelector('.modal__close-button'),
   modal: document.querySelector('#modal-window'),

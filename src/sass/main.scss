@@ -7,12 +7,15 @@
 @import './base/container';
 @import './base/reset-styles';
 @import './base/section';
+@import './base/visually-hidden';
 
 // COMPONENTS
 @import './components/backdrop';
 @import './components/buttonOnTop';
 @import './components/gallery';
 @import './components/modal-card';
+@import './components/headeMicrophone';
+@import './components/button';
 
 // LAYOUT
 
