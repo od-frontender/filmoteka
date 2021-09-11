@@ -32,4 +32,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{"./refs":"VyiV","./searchFilms":"WbZe","./app":"QdeU"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop"),require("./js/modal"),require("./js/intersectionObserver"),require("./js/searchFilms"),require("./js/loader");
 },{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys","./js/modal":"RSqK","./js/intersectionObserver":"cPMr","./js/searchFilms":"WbZe","./js/loader":"vQE2"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.1c9fd54d.js.map
+//# sourceMappingURL=/filmoteka/src.eee5ca49.js.map
