@@ -43,7 +43,7 @@ function parseMoviesObject(array) {
           ? [...genres.reduce(
             (acc, { id, name }) => (el.genre_ids.includes(+id) 
                   ? [...acc, name].slice(0, 2) 
-                  : acc), [],
+                  : acc), [], 
               ),]
           : ['Unknown'],
       }));;
