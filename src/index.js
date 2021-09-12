@@ -6,3 +6,4 @@ import './js/intersectionObserver';
 import './js/searchFilms';
 import './js/loader';
 import './js/library';
+import './js/changeTheme';
