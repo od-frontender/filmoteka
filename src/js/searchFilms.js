@@ -2,8 +2,10 @@ import refs from './refs';
 import API from './apiService';
 import galleryCard from '../templates/galleryCard.hbs';
 import showGallery from './app';
-import loadSpinner from './loader';
+
 var debounce = require('lodash.debounce');
+
+
 
 const apiService = new API();
 
@@ -23,6 +25,7 @@ function onSearchFilms(e) {
     return;
   }
 }
+
 
 function addFilmsMarkup(query) {
   const markup = galleryCard(query);
