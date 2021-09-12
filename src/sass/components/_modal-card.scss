@@ -116,7 +116,7 @@ img {
   &:not(:last-child) {
     margin-bottom: 10px;
   }
-  
+
   &:nth-child(3) p:last-child {
     text-transform: uppercase;
   }
@@ -203,6 +203,13 @@ img {
   border: 1px solid #000000;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #ff6b01;
+    border: 1px solid #ff6b01;
+  }
 }
 
 @media screen and (min-width: 768px) {
