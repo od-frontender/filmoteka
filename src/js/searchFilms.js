@@ -11,12 +11,12 @@ const apiService = new API();
 
 refs.searchForm.addEventListener('input', debounce(onSearchFilms, 1500));
 
+
 function onSearchFilms(e) {
   e.preventDefault();
 
   const value = e.target.value;
   refs.gallery.innerHTML = '';
-
 
   apiService.fetchFilmsToId(value).then(res => {
     addFilmsMarkup(res.results);
@@ -33,4 +33,18 @@ function onSearchFilms(e) {
 function addFilmsMarkup(query) {
   const markup = galleryCard(query);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
+// function addFilmsMarkup(data) {
+//     if (data.length !== 0) {
+//         const markup = galleryCard(data);
+//         refs.gallery.insertAdjacentHTML('beforeend', markup);
+//     }
+}
+
+function onSearchFilms(evt) {
+    evt.preventDefault();
+
+    const value = evt.currentTarget.elements.query.value;
+    console.log(value);
+    refs.gallery.innerHTML = '';
+    apiService.fetchFilmsToId(value).then(addFilmsMarkup);
 }
