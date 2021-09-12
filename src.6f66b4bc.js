@@ -31,7 +31,9 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 "use strict";var e=n(require("./refs")),r=n(require("./searchFilms")),t=n(require("./app"));function n(e){return e&&e.__esModule?e:{default:e}}const a=e=>{e.forEach(e=>{e.isIntersecting&&""!==t.default.query&&(console.log("Load more movies - TEST + Date.now()"),t.default.fetchPopularFilms().then(e=>{(0,r.default)(e),t.default.incrementPage()}),showGallery(),t.default.incrementPage())})},o=new IntersectionObserver(a,{rootMargin:"400px"});o.observe(e.default.sentinel);
 },{"./refs":"VyiV","./searchFilms":"WbZe","./app":"QdeU"}],"BfNj":[function(require,module,exports) {
 "use strict";var e=a(require("./refs"));function a(e){return e&&e.__esModule?e:{default:e}}function r(){e.default.headerBckgr.classList.remove("header__background"),e.default.headerBckgr.classList.add("library__background"),e.default.headerSearchInputWrapper.classList.add("visually-hidden"),e.default.watchedBtnLibrary.classList.remove("visually-hidden"),e.default.queueBtnLibrary.classList.remove("visually-hidden"),e.default.homeBtn.classList.remove("current"),e.default.libraryBtn.classList.add("current")}e.default.libraryBtn.addEventListener("click",r);
-},{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop"),require("./js/modal"),require("./js/intersectionObserver"),require("./js/searchFilms"),require("./js/loader"),require("./js/library");
-},{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys","./js/modal":"RSqK","./js/intersectionObserver":"cPMr","./js/searchFilms":"WbZe","./js/loader":"vQE2","./js/library":"BfNj"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.f3a1eaa8.js.map
+},{"./refs":"VyiV"}],"JW5E":[function(require,module,exports) {
+const e=document.querySelector(".body");console.log(e);const o=document.querySelector(".checkbox");function c(){e.classList.toggle("dark-theme")}console.log(o),o.addEventListener("click",c);
+},{}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop"),require("./js/modal"),require("./js/intersectionObserver"),require("./js/searchFilms"),require("./js/loader"),require("./js/library"),require("./js/changeTheme");
+},{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys","./js/modal":"RSqK","./js/intersectionObserver":"cPMr","./js/searchFilms":"WbZe","./js/loader":"vQE2","./js/library":"BfNj","./js/changeTheme":"JW5E"}]},{},["Focm"], null)
+//# sourceMappingURL=/filmoteka/src.6f66b4bc.js.map
