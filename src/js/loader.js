@@ -15,15 +15,35 @@
 
 //======================Var2==============================//
 
-function loadSpinner() {
-  window.onload = () => {
-  let preloader = document.getElementById('preloader');
-  preloader.style.display = 'none';
-}
-}
+// function loadSpinner() {
+//   window.onload = () => {
+//   let preloader = document.getElementById('preloader');
+//   preloader.style.display = 'none';
+// }
+// }
 
-loadSpinner();
+// loadSpinner();
 
+//======================Var3==============================//
 
+// function loadSpinner() {
+//   let preLoader = document.querySelector('#preloader');
 
+// window.addEventListener('load', () => {
+//     setTimeout(() => {
+//         preLoader.remove();
+//         $('body').removeClass('scroll-off');
+//     }, 1000);
+// })
+// }
+
+// loadSpinner();
+let preLoader = document.querySelector('#preloader');
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        preLoader.remove();
+        $('body').removeClass('scroll-off');
+    }, 1000);
+})
 

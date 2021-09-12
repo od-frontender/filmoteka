@@ -41,10 +41,15 @@
 
 //====================================Var2================================//
 
+.scroll-off {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
 .preloader {
   align-content: center;
   position: fixed;
-  background-color: transparent;
+  background-color: white;
   display: flex;
   justify-content: center;
   z-index: 1;
