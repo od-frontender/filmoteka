@@ -36,15 +36,24 @@
 	to { transform: scale(1.5); }
 }
 
-  .footer_container__authors__button {
-    border: none;
+//   .footer_container__authors__button {
+//     border: none;
+//     background-color: initial;
+//     cursor: pointer;
+//     text-decoration: underline;
+//     color: #545454;
+//   }
+  
+  .footer_container__authors__link {
     background-color: initial;
     cursor: pointer;
-  
     text-decoration: underline;
     color: #545454;
+    &:hover {
+        color: #ff6b08;
+      }
   }
-  
+
   @media screen and (min-width: 768px) {
     .wrap-container {
       padding-bottom: 70px;
