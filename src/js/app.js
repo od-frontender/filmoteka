@@ -13,8 +13,8 @@ const apiService = new API();
 //       ? [
 //           ...genres.reduce(
 //             (acc, { id, name }) => (
-//               el.genre_ids.includes(+id) 
-//               ? [...acc, name].slice(0, 3) 
+//               el.genre_ids.includes(+id)
+//               ? [...acc, name].slice(0, 3)
 //               : acc), [],
 //           ),
 //         ]
@@ -29,27 +29,22 @@ function parseMoviesObject(array) {
     if (elem.title.length > 35) {
       elem.title = elem.title.slice(0, 35) + '...';
     }
-   
     elem.release_date
       ? (elem.release_date = elem.release_date.slice(0, 4))
       : (elem.release_date = 'Unknown');
-
-    // Функция от ментора - парсит жанры для карточки галлереи
-    
   });
   return array.map(el => ({
-      ...el,
-      genre_ids: el.genre_ids.length
-          ? [...genres.reduce(
-            (acc, { id, name }) => (el.genre_ids.includes(+id) 
-                  ? [...acc, name].slice(0, 2) 
-                  : acc), [],
-              ),]
-          : ['Unknown'],
-      }));;
+    ...el,
+    genre_ids: el.genre_ids.length
+      ? [
+          ...genres.reduce(
+            (acc, { id, name }) => (el.genre_ids.includes(+id) ? [...acc, name].slice(0, 2) : acc),
+            [],
+          ),
+        ]
+      : ['Unknown'],
+  }));
 }
-
-
 // Функция выводит список популярных фильмов на основную старницу
 export default function showGallery() {
   apiService.fetchPopularFilms().then(response => {

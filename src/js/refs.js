@@ -14,5 +14,6 @@ const refs = {
   queueBtnLibrary: document.querySelector('.queue-button'),
   homeBtn: document.querySelector('#home-button'),
   libraryBtn: document.querySelector('#library-button'),
+  search: document.querySelector('.search'),
 };
 export default refs;
