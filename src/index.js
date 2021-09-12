@@ -6,4 +6,8 @@ import './js/intersectionObserver';
 import './js/searchFilms';
 import './js/loader';
 import './js/library';
+
 import './js/footer_modal_students';
+
+import './js/changeTheme';
+
