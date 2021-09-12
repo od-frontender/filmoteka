@@ -199,6 +199,9 @@ img {
   height: 44px;
   padding: 0;
 
+  line-height: 1.33;
+  text-transform: uppercase;
+
   background-color: #fff;
   border: 1px solid #000000;
   border-radius: 5px;
@@ -227,7 +230,7 @@ img {
   }
 }
 
-.modal-button__checked {
+.modal-button__active {
   color: #ffffff;
   background-color: #ff6b01;
   border: 1px solid #ff6b01;
