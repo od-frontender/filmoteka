@@ -2,6 +2,9 @@ import refs from './refs';
 import API from './apiService';
 import modalCard from '../templates/modal-card.hbs';
 const apiService = new API();
+// ====== localStorage ======
+// import LocalStorageUtil from './localStorage';
+// const localStorageUtil = new LocalStorageUtil();
 
 refs.gallery.addEventListener('click', onOpenModal);
 refs.backdropElt.addEventListener('click', onBackdropClick);
@@ -26,6 +29,14 @@ function renderMovieCard(response) {
   refs.backdropElt.innerHTML = markupCard;
   const closeModalBtnElt = document.querySelector('.modal__close-button');
   closeModalBtnElt.addEventListener('click', onCloseModal);
+
+  // // добавиил с refs
+  const watchedBtnLibrary = document.querySelector('.watched-button');
+  const queueBtnLibrary = document.querySelector('.queue-button');
+
+  // добавиил с localStoreage
+  watchedBtnLibrary.addEventListener('click', localStorageUtil.getWatched);
+  queueBtnLibrary.addEventListener('click', localStorageUtil.getQueue);
 }
 
 // закрытие модального окна по клику на кнопку закрытия
