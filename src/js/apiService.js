@@ -8,10 +8,6 @@ export default class API {
   }
   // Запрос на популярные фильмы основной страницы
   fetchPopularFilms() {
-    const searchParams = new URLSearchParams({
-      query: this.searchQuery,
-      page: this.page,
-    });
     const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
     return fetch(url)
       .then(res => res.json())
@@ -20,23 +16,6 @@ export default class API {
       })
       .catch(err => console.log(err));
   }
-
-  incrementPage() {
-    this.page += 1;
-  }
-
-  resetPage() {
-    this.page = 1;
-  }
-
-  get query() {
-    return this.searchQuery;
-  }
-
-  set query(newQuery) {
-    this.searchQuery = newQuery;
-  }
-
   // Запрос на получения жанров фильмов
   async fetchGenres() {
     const url = `${BASE_URL}genre/movie/list?api_key=${API_KEY}&language=en-US`;
@@ -57,6 +36,7 @@ export default class API {
       })
       .catch(err => console.log(err));
   }
+  // Запрос на получение информации по поиску
   fetchFilmsToId(query) {
     return fetch(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`,
@@ -66,5 +46,20 @@ export default class API {
         return res;
       })
       .catch(err => console.log(err));
+  }
+  incrementPage() {
+    this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQuery) {
+    this.searchQuery = newQuery;
   }
 }

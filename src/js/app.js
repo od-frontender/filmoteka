@@ -5,23 +5,6 @@ import API from './apiService';
 
 const apiService = new API();
 
-// Функция парсит жанры для карточки галлереи
-// function parseGenres(array) {
-//   return array.map(el => ({
-//     ...el,
-//     genre_ids: el.genre_ids.length
-//       ? [
-//           ...genres.reduce(
-//             (acc, { id, name }) => (
-//               el.genre_ids.includes(+id)
-//               ? [...acc, name].slice(0, 3)
-//               : acc), [],
-//           ),
-//         ]
-//       : ['Unknown'],
-//   }));
-// }
-
 // Функция парсит заголовок, дату и жанры для карточки галлереи - Тестовая функция, нужно доделать
 
 function parseMoviesObject(array) {
