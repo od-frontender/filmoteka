@@ -29,6 +29,7 @@ function parseMoviesObject(array) {
     if (elem.title.length > 35) {
       elem.title = elem.title.slice(0, 35) + '...';
     }
+
     elem.release_date
       ? (elem.release_date = elem.release_date.slice(0, 4))
       : (elem.release_date = 'Unknown');
@@ -45,6 +46,7 @@ function parseMoviesObject(array) {
       : ['Unknown'],
   }));
 }
+
 // Функция выводит список популярных фильмов на основную старницу
 export default function showGallery() {
   apiService.fetchPopularFilms().then(response => {
