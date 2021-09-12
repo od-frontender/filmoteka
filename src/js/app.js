@@ -67,3 +67,6 @@ function renderMoviesList(response) {
   const markup = movieTpl(response);
   refs.gallery.innerHTML = markup;
 }
+
+
+///////
