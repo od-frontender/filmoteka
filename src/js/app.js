@@ -34,20 +34,63 @@ function parseMoviesObject(array) {
       ? (elem.release_date = elem.release_date.slice(0, 4))
       : (elem.release_date = 'Unknown');
 
-
     // Функция от ментора - парсит жанры для карточки галлереи
     
   });
+
+
+  // return array.map(el => ({
+  //     ...el,
+  //     genre_ids: el.genre_ids.length
+  //         ? [...genres.reduce(
+  //           (acc, { id, name }) => (el.genre_ids.includes(+id) 
+  //             ? [...acc, name] {
+  //           if (genre_ids.length > 2) {
+  //       [...genres.push(`...Other`)]
+  //     }
+  //             }
+  //                 : acc), [],
+  //             ),]
+  //     : ['Unknown'],
+  // }));
+
+  
+    
+
+
   return array.map(el => ({
       ...el,
       genre_ids: el.genre_ids.length
           ? [...genres.reduce(
             (acc, { id, name }) => (el.genre_ids.includes(+id) 
-                  ? [...acc, name].slice(0, 2) 
+              ? [...acc, name].slice(0, 2)
                   : acc), [],
               ),]
-          : ['Unknown'],
-      }));;
+      : ['Unknown'],
+  }));
+
+
+  //  let genresArr = [];
+  //   result.genre_ids.forEach(genreID => {
+  //     genres.forEach(genOBJ => {
+  //       if (genreID === genOBJ.id) {
+  //         genresArr.push(` ${genOBJ.name}`);
+  //       }
+  //     });
+  //   });
+  //   if (genresArr.length > 3) {
+  //     genresArr = genresArr.slice(0, 2);
+  //     genresArr.push(' other..');
+  //   }
+  //   result.genre_ids = genresArr;
+  // return genresArr;
+
+
+
+  //  if (genre_ids.length > 2) {
+  //       [...genres.push(`...Other`)]
+  //     } 
+  
 }
 
 
@@ -65,6 +108,3 @@ function renderMoviesList(response) {
   const markup = movieTpl(response);
   refs.gallery.innerHTML = markup;
 }
-
-
-///////
