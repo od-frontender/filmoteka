@@ -49,25 +49,6 @@ function parseMoviesObject(array) {
           : ['Unknown'],
       }));;
 }
-=======
-
-    // Функция от ментора - парсит жанры для карточки галлереи
- 
-  });
-  return array.map(el => ({
-      ...el,
-      genre_ids: el.genre_ids.length
-          ? [...genres.reduce(
-            (acc, { id, name }) => (el.genre_ids.includes(+id) 
-                  ? [...acc, name].slice(0, 2) 
-                  : acc), [], 
-              ),]
-          : ['Unknown'],
-      }));;
-}
-
-
-
 
 
 // Функция выводит список популярных фильмов на основную старницу
