@@ -15,6 +15,7 @@ function showLibrary() {
   refs.homeBtn.classList.remove('current');
   refs.libraryBtn.classList.add('current');
   refs.gallery.innerHTML = '';
+  refs.loadMoreBtn.classList.add('visually-hidden');
 }
 function showMaimPage() {
   refs.headerBckgr.classList.add('header__background');

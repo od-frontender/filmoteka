@@ -16,11 +16,13 @@ function onSearchFilms(e) {
 
   const value = e.currentTarget.elements.query.value;
   refs.gallery.innerHTML = '';
+
   apiService.fetchFilmsToId(value).then(res => {
     const parsedData = parseMoviesObject(res.results);
     addFilmsMarkup(parsedData);
   });
   refs.searchForm.reset();
+  refs.loadMoreBtn.classList.add('visually-hidden');
 }
 // Функция рендерит карточки фильмов с поиска на основную страницу
 function addFilmsMarkup(query) {

@@ -31,5 +31,7 @@ function onLoadMore() {
 
 function showMainPage() {
   refs.gallery.innerHTML = '';
+  apiService.resetPage();
   showGallery();
+  refs.loadMoreBtn.classList.remove('visually-hidden');
 }
