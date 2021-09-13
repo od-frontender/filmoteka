@@ -14,7 +14,7 @@ function onOpenModal(e) {
   e.preventDefault();
   if (e.currentTarget !== e.target) {
     refs.backdropElt.classList.add('show-modal');
-
+    document.body.parentNode.style.overflow = "hidden"; //Анна: убрала скролл при открытой модалке
     const movieId = e.target.parentNode.parentNode.id;
     apiService.fetchAllInfoAboutFilm(movieId).then(response => {
       renderMovieCard(response);
@@ -149,6 +149,7 @@ function changeQueueBtn(id) {
 function onCloseModal(e) {
   refs.backdropElt.innerHTML = '';
   refs.backdropElt.classList.remove('show-modal');
+  document.body.parentNode.style.overflow = "visible"; //Анна: скролл работает при закрытой модалке
   refs.bodyElt.classList.remove('fixed-body');
   window.removeEventListener('keydown', onEscKeyDown);
 }

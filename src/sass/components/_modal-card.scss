@@ -1,3 +1,7 @@
+// body.show-modal {
+//   overflow: hidden;
+// }
+
 img {
   display: block;
 }
@@ -5,18 +9,22 @@ img {
 .modal {
   position: fixed;
   top: 20px;
-  left: 50%;
+  left: 49.4%; 
   transform: translateX(-50%);
-
   width: 280px;
   // height: 958px;
   padding: 48px 20px 40px 20px;
   background-color: #ffffff;
 }
 
+//Анна: добавила скролл модалке в мобильной версии
+.modal-wrap{
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
 @media screen and (min-width: 768px) {
   .modal {
-    top: 230px;
+    top: 100px; // Анна: подняла модалку чуть выше
     width: 618px;
     // height: 562px;
     padding: 42px 28px 40px;
