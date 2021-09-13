@@ -4,7 +4,7 @@ import API from './apiService';
 const apiService = new API();
 
 refs.libraryBtn.addEventListener('click', showLibrary);
-refs.homeBtn.addEventListener('click', showMaimPage);
+refs.homeBtn.addEventListener('click', showMainPage);
 
 function showLibrary() {
   refs.headerBckgr.classList.remove('header__background');
@@ -16,8 +16,9 @@ function showLibrary() {
   refs.libraryBtn.classList.add('current');
   refs.gallery.innerHTML = '';
   refs.loadMoreBtn.classList.add('visually-hidden');
+  refs.loadMoreToSearchBtn.classList.add('visually-hidden');
 }
-function showMaimPage() {
+export default function showMainPage() {
   refs.headerBckgr.classList.add('header__background');
   refs.headerBckgr.classList.remove('library__background');
   refs.headerSearchInputWrapper.classList.remove('visually-hidden');
@@ -26,6 +27,8 @@ function showMaimPage() {
   refs.homeBtn.classList.add('current');
   refs.libraryBtn.classList.remove('current');
   refs.loadMoreToSearchBtn.classList.add('visually-hidden');
+  refs.loadMoreBtn.classList.remove('visually-hidden');
+  refs.gallery.innerHTML = '';
   apiService.resetPage();
   showGallery();
 }

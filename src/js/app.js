@@ -4,6 +4,7 @@ import API from './apiService';
 import parseMoviesObject from './filterGenres';
 // import qwerty from './loader';
 const apiService = new API();
+import showMainPage from './library';
 
 refs.logo.addEventListener('click', showMainPage);
 
@@ -29,10 +30,10 @@ function onLoadMore() {
 }
 //функция отрысовует галерею
 
-function showMainPage() {
-  refs.gallery.innerHTML = '';
-  apiService.resetPage();
-  showGallery();
-  refs.loadMoreBtn.classList.remove('visually-hidden');
-  refs.loadMoreToSearchBtn.classList.add('visually-hidden');
-}
+// function showMainPage() {
+//   refs.gallery.innerHTML = '';
+//   apiService.resetPage();
+//   showGallery();
+//   refs.loadMoreBtn.classList.remove('visually-hidden');
+//   refs.loadMoreToSearchBtn.classList.add('visually-hidden');
+// }
