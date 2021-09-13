@@ -25,6 +25,7 @@ function showMaimPage() {
   refs.queueBtnLibrary.classList.add('visually-hidden');
   refs.homeBtn.classList.add('current');
   refs.libraryBtn.classList.remove('current');
+  refs.loadMoreToSearchBtn.classList.add('visually-hidden');
   apiService.resetPage();
   showGallery();
 }

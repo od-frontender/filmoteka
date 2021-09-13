@@ -38,9 +38,9 @@ export default class API {
       .catch(err => console.log(err));
   }
   // Запрос на получение информации по поиску
-  fetchFilmsToId(query) {
+  fetchFilmsToId() {
     return fetch(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`,
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${this.searchQuery}&language=en-US&page=${this.page}&include_adult=false`,
     )
       .then(res => res.json())
       .then(res => {

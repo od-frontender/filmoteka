@@ -14,15 +14,16 @@ console.log(refs.searchInput.value);
 function onSearchFilms(e) {
   e.preventDefault();
 
-  const value = e.currentTarget.elements.query.value;
+  apiService.query = e.currentTarget.elements.query.value;
   refs.gallery.innerHTML = '';
 
-  apiService.fetchFilmsToId(value).then(res => {
+  apiService.fetchFilmsToId().then(res => {
     const parsedData = parseMoviesObject(res.results);
     addFilmsMarkup(parsedData);
   });
   refs.searchForm.reset();
   refs.loadMoreBtn.classList.add('visually-hidden');
+  refs.loadMoreToSearchBtn.classList.remove('visually-hidden');
 }
 // Функция рендерит карточки фильмов с поиска на основную страницу
 function addFilmsMarkup(query) {
@@ -30,13 +31,13 @@ function addFilmsMarkup(query) {
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-// Фукция отрисовки галереи когда пустой инпут
-// function resetOnSearch() {
-//   if (refs.searchInput.value === '') {
-//     refs.gallery.innerHTML = '';
-//     apiService.resetPage();
-//     showGallery();
+refs.loadMoreToSearchBtn.addEventListener('click', onLoadMoreFilmToSearch);
 
-//     return;
-//   }
-// }
+// // Функция рендерит карточки фильмов с поиска на основную страницу по loadMore
+
+function onLoadMoreFilmToSearch() {
+  apiService.incrementPage();
+  apiService.fetchFilmsToId().then(res => {
+    addFilmsMarkup(parseMoviesObject(res.results));
+  });
+}

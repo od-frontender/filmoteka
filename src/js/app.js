@@ -34,4 +34,5 @@ function showMainPage() {
   apiService.resetPage();
   showGallery();
   refs.loadMoreBtn.classList.remove('visually-hidden');
+  refs.loadMoreToSearchBtn.classList.add('visually-hidden');
 }

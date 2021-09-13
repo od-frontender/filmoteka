@@ -16,6 +16,7 @@ const refs = {
   libraryBtn: document.querySelector('#library-button'),
   searchForm: document.querySelector('.search-form'),
   loadMoreBtn: document.querySelector('#loadMore'),
+  loadMoreToSearchBtn: document.querySelector('#loadMoreToSearch'),
   logo: document.querySelector('.logo'),
 };
 export default refs;
