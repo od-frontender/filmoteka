@@ -1,6 +1,6 @@
 const refs = {
   gallery: document.querySelector('.movies__list'),
-  searchForm: document.querySelector('.search__input'),
+  searchInput: document.querySelector('.search__input'),
   backdropElt: document.querySelector('.backdrop'),
   modal: document.querySelector('#modal-window'),
   bodyElt: document.querySelector('body'),
@@ -14,5 +14,6 @@ const refs = {
   queueBtnLibrary: document.querySelector('.queue-button'),
   homeBtn: document.querySelector('#home-button'),
   libraryBtn: document.querySelector('#library-button'),
+  searchForm: document.querySelector('.search-form'),
 };
 export default refs;

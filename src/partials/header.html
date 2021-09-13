@@ -14,14 +14,14 @@
         <!-- SITE NAVIGATION - HOME/LIBRARY BUTTONS -->
         <nav class="site-nav">
           <a href="./index">
-          <button
-            id="home-button"
-            class="header-button home-button current"
-            type="button"
-            aria-label="main page switch"
-          >
-            Home
-          </button>
+            <button
+              id="home-button"
+              class="header-button home-button current"
+              type="button"
+              aria-label="main page switch"
+            >
+              Home
+            </button>
           </a>
           <button
             id="library-button"
@@ -35,28 +35,31 @@
       </div>
 
       <!-- SEARCH-INPUT CONTAINER -->
-      <div class="search-container">
-        <span class="search__input-wrapper">
-          <svg class="microphone" width="40" height="40" aria-label="voice search">
-            <use href="./images/sprite.svg#microphone"></use>
-          </svg>
+      <form class="search-form">
+        <div class="search-container">
+          <span class="search__input-wrapper">
+            <svg class="microphone" width="40" height="40" aria-label="voice search">
+              <use href="./images/sprite.svg#microphone"></use>
+            </svg>
 
-          <input
-            class="search__input"
-            type="text"
-            name="search"
-            autocomplete="off"
-            aria-label="Search films "
-            placeholder="Поиск фильмов"
-            contenteditable
-          />
-        </span>
-      </div>
-
+            <input
+              class="search__input"
+              type="text"
+              name="query"
+              autocomplete="off"
+              aria-label="Search films "
+              placeholder="Поиск фильмов"
+              contenteditable
+            />
+          </span>
+        </div>
+      </form>
       <!-- WATCHED/QUEUE BUTTONS -->
       <div class="button-container">
         <!-- оставила класс без visually-hidden для демонстрации -->
-        <button class="button watched-button visually-hidden activeBtn" type="button">WATCHED</button>
+        <button class="button watched-button visually-hidden activeBtn" type="button">
+          WATCHED
+        </button>
         <button class="button queue-button visually-hidden" type="button">QUEUE</button>
       </div>
     </div>
