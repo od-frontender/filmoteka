@@ -1,4 +1,3 @@
-
 //======================Var1==============================//
 // loadSpinner();
 
@@ -10,8 +9,7 @@
 //       document.body.classList.remove('loaded_hiding');
 //     }, 500);
 //   }
-// } 
-
+// }
 
 //======================Var2==============================//
 
@@ -38,12 +36,13 @@
 // }
 
 // loadSpinner();
-let preLoader = document.querySelector('#preloader');
+// let preLoader = document.querySelector('#preloader');
 
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        preLoader.remove();
-        $('body').removeClass('scroll-off');
-    }, 1000);
-})
+// window.addEventListener('load', qwerty);
 
+// export default function qwerty() {
+//   setTimeout(() => {
+//     preLoader.remove();
+//     $('body').removeClass('scroll-off');
+//   }, 800);
+// }

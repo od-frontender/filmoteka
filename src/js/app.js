@@ -2,6 +2,7 @@ import movieTpl from '../templates/galleryCard.hbs';
 import refs from './refs';
 import API from './apiService';
 import parseMoviesObject from './filterGenres';
+// import qwerty from './loader';
 const apiService = new API();
 
 // Функция выводит список популярных фильмов на основную старницу
@@ -16,5 +17,11 @@ showGallery();
 // Функция рендерит карточки фильмов на основной странице
 function renderMoviesList(response) {
   const markup = movieTpl(response);
-  refs.gallery.innerHTML = markup;
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+}
+
+refs.loadMoreBtn.addEventListener('click', onLoadMore);
+function onLoadMore() {
+  apiService.incrementPage();
+  showGallery();
 }

@@ -25,10 +25,14 @@ function addFilmsMarkup(query) {
   const markup = galleryCard(query);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
+
 // Фукция отрисовки галереи когда пустой инпут
 function resetOnSearch() {
   if (refs.searchInput.value === '') {
+    refs.gallery.innerHTML = '';
+    apiService.resetPage();
     showGallery();
+
     return;
   }
 }

@@ -52,7 +52,7 @@ export default class LocalStorageUtil {
   }
 }
 
-const localStorageUtil = new LocalStorage();
+// const localStorageUtil = new LocalStorage();
 
 // localStorageUtil.putWatched();
 
