@@ -1,0 +1,20 @@
+.button__load-more{
+    display: block;
+    margin: 0 auto 30px;
+    width: 136px;
+    height: 44px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    overflow: hidden;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: All 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #ff6b01;
+    border-color: #ff6b01;
+}
+
+
