@@ -15,6 +15,7 @@ function showLibrary() {
   refs.homeBtn.classList.remove('current');
   refs.libraryBtn.classList.add('current');
   refs.gallery.innerHTML = '';
+  refs.loadMoreBtn.classList.add('visually-hidden');
 }
 function showMaimPage() {
   refs.headerBckgr.classList.add('header__background');
@@ -24,6 +25,7 @@ function showMaimPage() {
   refs.queueBtnLibrary.classList.add('visually-hidden');
   refs.homeBtn.classList.add('current');
   refs.libraryBtn.classList.remove('current');
+  refs.loadMoreToSearchBtn.classList.add('visually-hidden');
   apiService.resetPage();
   showGallery();
 }
