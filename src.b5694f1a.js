@@ -29,8 +29,8 @@ $(window).on("scroll",function(){$(this).scrollTop()>100?$(".buttonOnTop").is(":
 },{"./refs":"VyiV","./apiService":"eQwa","../templates/galleryCard.hbs":"B7cY","./app":"QdeU","./filterGenres":"yJhR"}],"l9Ti":[function(require,module,exports) {
 "use strict";function e(){const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};function o(){e.modal.classList.toggle("is-hidden")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0,e();var o=e;exports.default=o;
 },{}],"JW5E":[function(require,module,exports) {
-const e=document.querySelector(".body"),c=document.querySelector(".checkbox");function t(){e.classList.toggle("dark-theme")}c.addEventListener("click",t);
+const e=document.querySelector(".body"),t=document.querySelector(".checkbox");t.addEventListener("change",o);const c={LIGHT:"light-theme",DARK:"dark-theme"};function o(e){e.target.checked?(localStorage.setItem("theme",c.DARK),document.body.classList.add(c.DARK)):(localStorage.setItem("theme",c.LIGHT),document.body.classList.remove(c.DARK))}function d(){localStorage.getItem("theme")===c.DARK&&(t.checked=!0,document.body.classList.toggle(c.DARK))}d();
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop"),require("./js/modal"),require("./js/searchFilms"),require("./js/library"),require("./js/footer_modal_students"),require("./js/changeTheme");
 },{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys","./js/modal":"RSqK","./js/searchFilms":"WbZe","./js/library":"BfNj","./js/footer_modal_students":"l9Ti","./js/changeTheme":"JW5E"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.5bb44943.js.map
+//# sourceMappingURL=/filmoteka/src.b5694f1a.js.map
