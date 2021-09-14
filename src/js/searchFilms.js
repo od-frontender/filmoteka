@@ -26,6 +26,7 @@ function onSearchFilms(e) {
       if (parsedData.length === 0) {
         refs.error.classList.remove('visually-hidden');
         refs.loadMoreToSearchBtn.classList.add('visually-hidden');
+        showGallery();
         return;
       }
       refs.loadMoreToSearchBtn.classList.remove('visually-hidden');

@@ -17,6 +17,7 @@ function showLibrary() {
   refs.gallery.innerHTML = '';
   refs.loadMoreBtn.classList.add('visually-hidden');
   refs.loadMoreToSearchBtn.classList.add('visually-hidden');
+  refs.error.classList.add('visually-hidden');
 }
 export default function showMainPage() {
   refs.headerBckgr.classList.add('header__background');
