@@ -103,6 +103,16 @@ header {
   align-items: flex-end;
 }
 
+.wrong-search {
+  display: flex;
+  justify-content: center;
+  color: #ff001b;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.1428;
+  padding-top: 22px;
+}
+
 .search__input-wrapper {
   display: flex;
   justify-content: center;
