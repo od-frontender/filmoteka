@@ -1,6 +1,6 @@
 .switch {
   position: fixed;
-  top: 20px;
+  top: 36px;
   right: 20px;
   display: inline-block;
   width: 50px;
@@ -18,7 +18,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  // background-color: #ccc;
+  background-color: black;
+  border: 1px solid rgba(255,107,8, 0.6);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -58,7 +60,9 @@ input:checked + .slider.round::before {
 }
 
 .dark-theme {
-  background-color: rgb(104, 105, 104);
+  // background-color: rgb(104, 105, 104);
+  background-color: black; //Анна: изменила цвет тепной темы
+  color: white;
 }
 
 @media screen and (max-width: 468px) {
