@@ -3,7 +3,6 @@ import showGallery from './app';
 import API from './apiService';
 import LocalStorageUtil from './localStorage';
 import lib from '../templates/lib.hbs';
-import parseMoviesObject from './filterGenres';
 
 const apiService = new API();
 const localStorageUtil = new LocalStorageUtil();
@@ -37,18 +36,44 @@ function showMaimPage() {
 }
 
 refs.watchedBtnLibrary.addEventListener('click', showWatchedList);
+refs.queueBtnLibrary.addEventListener('click', showQueueList);
 
-export default function showWatchedList() {
+function showWatchedList() {
+  refs.watchedBtnLibrary.classList.add('activeBtn');
+  refs.queueBtnLibrary.classList.remove('activeBtn');
+  refs.gallery.innerHTML = '';
   const watchedArray = localStorageUtil.getWatched();
-  console.log(watchedArray);
+  // console.log(watchedArray);
 
-  const x = watchedArray.map(id =>
+  watchedArray.map(id =>
     apiService.fetchAllInfoAboutFilm(id).then(response => {
       renderWatchedList(response);
     }),
   );
-  function renderWatchedList(response) {
-    const markup = lib(response);
-    refs.gallery.insertAdjacentHTML('beforeend', markup);
-  }
 }
+
+function renderWatchedList(response) {
+  const markup = lib(response);
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+}
+
+function showQueueList() {
+  refs.watchedBtnLibrary.classList.remove('activeBtn');
+  refs.queueBtnLibrary.classList.add('activeBtn');
+  refs.gallery.innerHTML = '';
+  const queueArray = localStorageUtil.getQueue();
+  // console.log(watchedArray);
+
+  queueArray.map(id =>
+    apiService.fetchAllInfoAboutFilm(id).then(response => {
+      renderQueueList(response);
+    }),
+  );
+}
+
+function renderQueueList(response) {
+  const markup = lib(response);
+  refs.gallery.insertAdjacentHTML('beforeend', markup);
+}
+
+export { showWatchedList, showQueueList };

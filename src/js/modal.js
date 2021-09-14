@@ -1,7 +1,7 @@
 import refs from './refs';
 import API from './apiService';
 import modalCard from '../templates/modal-card.hbs';
-import showWatchedList from './library-sm';
+import { showWatchedList, showQueueList } from './library-sm';
 const apiService = new API();
 // ====== localStorage ======
 // import LocalStorageUtil from './localStorage';
@@ -111,10 +111,8 @@ function putQueue(id) {
 function changeWatchedBtn(id) {
   const watchedBtnModal = document.querySelector('.modal-watched-button');
   let watchedMovies = localStorage.getItem('Watched');
-  // console.log(watchedMovies);
   let parsedMovies = JSON.parse(watchedMovies);
   if (parsedMovies.includes(id)) {
-    // console.log('есть в watched');
     // watchedBtnModal.textContent = 'Added to watched';
     watchedBtnModal.classList.add('modal-button__active');
     watchedBtnModal.textContent = 'Remove from watched';
@@ -123,7 +121,6 @@ function changeWatchedBtn(id) {
     // }
     // setTimeout(changeText, 1000);
   } else {
-    // console.log('нет в watched');
     watchedBtnModal.textContent = 'Add to watched';
     watchedBtnModal.classList.remove('modal-button__active');
   }
@@ -132,10 +129,8 @@ function changeWatchedBtn(id) {
 function changeQueueBtn(id) {
   const queueBtnModal = document.querySelector('.modal-queue-button');
   let queueMovies = localStorage.getItem('Queue');
-  // console.log(queueMovies);
   let parsedMovies = JSON.parse(queueMovies);
   if (parsedMovies.includes(id)) {
-    // console.log('есть в Queue');
     // queueBtnModal.textContent = 'Added to queue';
     queueBtnModal.classList.add('modal-button__active');
     queueBtnModal.textContent = 'Remove from queue';
@@ -144,7 +139,6 @@ function changeQueueBtn(id) {
     // }
     // setTimeout(changeText, 1000);
   } else {
-    // console.log('нет в Queue');
     queueBtnModal.textContent = 'Add to queue';
     queueBtnModal.classList.remove('modal-button__active');
   }
@@ -157,6 +151,18 @@ function onCloseModal(e) {
   document.body.parentNode.style.overflow = 'visible'; //Анна: скролл работает при закрытой модалке
   refs.bodyElt.classList.remove('fixed-body');
   window.removeEventListener('keydown', onEscKeyDown);
+  if (
+    refs.libraryBtn.classList.contains('current') &&
+    refs.watchedBtnLibrary.classList.contains('activeBtn')
+  ) {
+    showWatchedList();
+  }
+  if (
+    refs.libraryBtn.classList.contains('current') &&
+    refs.queueBtnLibrary.classList.contains('activeBtn')
+  ) {
+    showQueueList();
+  }
 }
 
 // закрытие модального окна по клику на бекдроп

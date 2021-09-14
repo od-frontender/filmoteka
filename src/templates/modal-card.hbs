@@ -31,12 +31,14 @@
         </li>
         <li class='modal-info__item'>
           <p class='modal-info__title-item'>Genre</p>
-          <p class='modal-info__value-item'>{{#if genres}}
+          <p class='modal-info__value-item'>
+            {{#if genres}}
             {{#each genres}}
             <span>{{this.name}}{{#unless @last}},{{/unless}}</span>
             {{/each}}
             {{else}}<span>N/A</span>
-            {{/if}}</p>
+            {{/if}}
+          </p>
         </li>
       </ul>
 

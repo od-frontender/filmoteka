@@ -10,7 +10,13 @@
 
   <div class='movie__description'>
     <p class='movie__name'>{{title}}</p>
-    <p class='movie__genre'>{{genre_ids}}
+    <p class='movie__genre'>
+      {{#if genres}}
+      {{#each genres}}
+      <span>{{this.name}}{{#unless @last}},{{/unless}}</span>
+      {{/each}}
+      {{else}}<span>N/A</span>
+      {{/if}}
       |
       {{release_date}}
       <span class='movie__rating'>{{vote_average}}</span>
