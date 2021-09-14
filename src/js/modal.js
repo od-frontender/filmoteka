@@ -14,10 +14,12 @@ function onOpenModal(e) {
   e.preventDefault();
   if (e.currentTarget !== e.target) {
     refs.backdropElt.classList.add('show-modal');
-    document.body.parentNode.style.overflow = "hidden"; //Анна: убрала скролл при открытой модалке
+    document.body.parentNode.style.overflow = 'hidden'; //Анна: убрала скролл при открытой модалке
     const movieId = e.target.parentNode.parentNode.id;
     apiService.fetchAllInfoAboutFilm(movieId).then(response => {
       renderMovieCard(response);
+      changeWatchedBtn(movieId);
+      changeQueueBtn(movieId);
     });
     // refs.bodyElt.classList.add('fixed-body');
   }
@@ -43,14 +45,14 @@ function onWatched(e) {
   const filmId = e.path[4].id;
 
   putWatched(filmId);
-  changeWatchedBtn(filmId);
+  // changeWatchedBtn(filmId);
 }
 
 function onQueue(e) {
   const filmId = e.path[4].id;
 
   putQueue(filmId);
-  changeQueueBtn(filmId);
+  // changeQueueBtn(filmId);
 }
 
 function getWatched() {
@@ -112,12 +114,13 @@ function changeWatchedBtn(id) {
   let parsedMovies = JSON.parse(watchedMovies);
   if (parsedMovies.includes(id)) {
     // console.log('есть в watched');
-    watchedBtnModal.textContent = 'Added to watched';
+    // watchedBtnModal.textContent = 'Added to watched';
     watchedBtnModal.classList.add('modal-button__active');
-    function changeText() {
-      watchedBtnModal.textContent = 'Remove from watched';
-    }
-    setTimeout(changeText, 1000);
+    watchedBtnModal.textContent = 'Remove from watched';
+    // function changeText() {
+    //   watchedBtnModal.textContent = 'Remove from watched';
+    // }
+    // setTimeout(changeText, 1000);
   } else {
     // console.log('нет в watched');
     watchedBtnModal.textContent = 'Add to watched';
@@ -132,12 +135,13 @@ function changeQueueBtn(id) {
   let parsedMovies = JSON.parse(queueMovies);
   if (parsedMovies.includes(id)) {
     // console.log('есть в Queue');
-    queueBtnModal.textContent = 'Added to queue';
+    // queueBtnModal.textContent = 'Added to queue';
     queueBtnModal.classList.add('modal-button__active');
-    function changeText() {
-      queueBtnModal.textContent = 'Remove from queue';
-    }
-    setTimeout(changeText, 1000);
+    queueBtnModal.textContent = 'Remove from queue';
+    // function changeText() {
+    //   queueBtnModal.textContent = 'Remove from queue';
+    // }
+    // setTimeout(changeText, 1000);
   } else {
     // console.log('нет в Queue');
     queueBtnModal.textContent = 'Add to queue';
@@ -149,7 +153,7 @@ function changeQueueBtn(id) {
 function onCloseModal(e) {
   refs.backdropElt.innerHTML = '';
   refs.backdropElt.classList.remove('show-modal');
-  document.body.parentNode.style.overflow = "visible"; //Анна: скролл работает при закрытой модалке
+  document.body.parentNode.style.overflow = 'visible'; //Анна: скролл работает при закрытой модалке
   refs.bodyElt.classList.remove('fixed-body');
   window.removeEventListener('keydown', onEscKeyDown);
 }
