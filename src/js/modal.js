@@ -74,38 +74,48 @@ function getQueue() {
 
 function putWatched(id) {
   const watchedBtnModal = document.querySelector('.modal-watched-button');
-  const movie = getWatched();
-  const index = movie.indexOf(id);
-
-  if (index === -1) {
-    movie.push(id);
+  const queueBtnModal = document.querySelector('.modal-queue-button');
+  const watchedMovie = getWatched();
+  const queueMovie = getQueue();
+  const watchedIndex = watchedMovie.indexOf(id);
+  const queueIndex = queueMovie.indexOf(id);
+  if (queueIndex === -1) {
+    if (watchedIndex === -1) {
+      watchedMovie.push(id);
+      watchedBtnModal.classList.add('modal-button__active');
+      watchedBtnModal.textContent = 'Remove from watched';
+    } else {
+      watchedMovie.splice(watchedIndex, 1);
+      watchedBtnModal.classList.remove('modal-button__active');
+      watchedBtnModal.textContent = 'Add to watched';
+    }
+  } else {
+    queueMovie.splice(queueIndex, 1);
+    queueBtnModal.classList.remove('modal-button__active');
+    queueBtnModal.textContent = 'Add to queue';
     watchedBtnModal.classList.add('modal-button__active');
     watchedBtnModal.textContent = 'Remove from watched';
-  } else {
-    movie.splice(index, 1);
-    watchedBtnModal.classList.remove('modal-button__active');
-    watchedBtnModal.textContent = 'Add to watched';
   }
 
-  localStorage.setItem('Watched', JSON.stringify(movie));
+  localStorage.setItem('Watched', JSON.stringify(watchedMovie));
 }
 
 function putQueue(id) {
   const queueBtnModal = document.querySelector('.modal-queue-button');
-  const movie = getQueue();
-  const index = movie.indexOf(id);
+  const queueMovie = getQueue();
+  const index = queueMovie.indexOf(id);
 
   if (index === -1) {
-    movie.push(id);
+    queueMovie.push(id);
     queueBtnModal.classList.add('modal-button__active');
     queueBtnModal.textContent = 'Remove from queue';
   } else {
-    movie.splice(index, 1);
+    queueMovie.splice(index, 1);
     queueBtnModal.classList.remove('modal-button__active');
     queueBtnModal.textContent = 'Add to queue';
   }
 
-  localStorage.setItem('Queue', JSON.stringify(movie));
+  localStorage.setItem('Queue', JSON.stringify(queueMovie));
 }
 
 function changeWatchedBtn(id) {
