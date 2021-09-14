@@ -5,5 +5,6 @@ import './js/modal';
 import './js/searchFilms';
 // import './js/loader';
 import './js/library';
+// import './js/library-sm';
 import './js/footer_modal_students';
 import './js/changeTheme';
