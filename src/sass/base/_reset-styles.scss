@@ -38,6 +38,9 @@ a {
 
 .link {
   text-decoration: none;
+  &:visited{
+    color: inherit;
+  }
 }
 
 .list {
