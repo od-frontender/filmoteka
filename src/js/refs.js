@@ -18,5 +18,6 @@ const refs = {
   loadMoreBtn: document.querySelector('#loadMore'),
   loadMoreToSearchBtn: document.querySelector('#loadMoreToSearch'),
   logo: document.querySelector('.logo'),
+  error: document.querySelector('.wrong-search'),
 };
 export default refs;

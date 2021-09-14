@@ -17,13 +17,23 @@ function onSearchFilms(e) {
   apiService.query = e.currentTarget.elements.query.value;
   refs.gallery.innerHTML = '';
 
-  apiService.fetchFilmsToId().then(res => {
-    const parsedData = parseMoviesObject(res.results);
-    addFilmsMarkup(parsedData);
-  });
+  refs.error.classList.add('visually-hidden');
+  apiService
+    .fetchFilmsToId()
+    .then(res => {
+      const parsedData = parseMoviesObject(res.results);
+      addFilmsMarkup(parsedData);
+      if (parsedData.length === 0) {
+        refs.error.classList.remove('visually-hidden');
+        refs.loadMoreToSearchBtn.classList.add('visually-hidden');
+        return;
+      }
+      refs.loadMoreToSearchBtn.classList.remove('visually-hidden');
+    })
+    .then(res => console.log(res));
+
   refs.searchForm.reset();
   refs.loadMoreBtn.classList.add('visually-hidden');
-  refs.loadMoreToSearchBtn.classList.remove('visually-hidden');
 }
 // Функция рендерит карточки фильмов с поиска на основную страницу
 function addFilmsMarkup(query) {
