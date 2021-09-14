@@ -1,4 +1,6 @@
-
+main {
+  min-height: calc(100vh - 100px);
+}
 .wrap-container {
     padding-bottom: 100px;
     min-height: 100vh;
@@ -35,15 +37,6 @@
   @keyframes beat{
 	to { transform: scale(1.5); }
 }
-
-//   .footer_container__authors__button {
-//     border: none;
-//     background-color: initial;
-//     cursor: pointer;
-//     text-decoration: underline;
-//     color: #545454;
-//   }
-  
   .footer_container__authors__link {
     background-color: initial;
     cursor: pointer;
@@ -55,6 +48,10 @@
   }
 
   @media screen and (min-width: 768px) {
+    main {
+      min-height: calc(100vh - 77px);
+    }
+
     .wrap-container {
       padding-bottom: 70px;
     }
