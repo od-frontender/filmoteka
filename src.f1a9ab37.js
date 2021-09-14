@@ -33,4 +33,4 @@ const e=document.querySelector(".body"),t=document.querySelector(".checkbox");t.
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/app"),require("./js/buttonOnTop"),require("./js/modal"),require("./js/searchFilms"),require("./js/library"),require("./js/footer_modal_students"),require("./js/changeTheme");
 },{"./sass/main.scss":"clu1","./js/app":"QdeU","./js/buttonOnTop":"oNys","./js/modal":"RSqK","./js/searchFilms":"WbZe","./js/library":"BfNj","./js/footer_modal_students":"l9Ti","./js/changeTheme":"JW5E"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.b5694f1a.js.map
+//# sourceMappingURL=/filmoteka/src.f1a9ab37.js.map
