@@ -19,5 +19,6 @@ const refs = {
   loadMoreToSearchBtn: document.querySelector('#loadMoreToSearch'),
   logo: document.querySelector('.logo'),
   error: document.querySelector('.wrong-search'),
+  darkFooterTheme: document.querySelector('.footer'),
 };
 export default refs;
