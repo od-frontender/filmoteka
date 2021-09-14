@@ -1,16 +1,15 @@
 import refs from './refs';
 import showGallery from './app';
 import API from './apiService';
-const apiService = new API();
-
 import LocalStorageUtil from './localStorage';
+import lib from '../templates/lib.hbs';
+import parseMoviesObject from './filterGenres';
+
+const apiService = new API();
 const localStorageUtil = new LocalStorageUtil();
 
 refs.libraryBtn.addEventListener('click', showLibrary);
 refs.homeBtn.addEventListener('click', showMaimPage);
-
-import movieTpl from '../templates/galleryCard.hbs';
-import parseMoviesObject from './filterGenres';
 
 function showLibrary() {
   refs.headerBckgr.classList.remove('header__background');
@@ -39,21 +38,17 @@ function showMaimPage() {
 
 refs.watchedBtnLibrary.addEventListener('click', showWatchedList);
 
-function showWatchedList() {
+export default function showWatchedList() {
   const watchedArray = localStorageUtil.getWatched();
+  console.log(watchedArray);
 
-  const w = watchedArray.map(id =>
+  const x = watchedArray.map(id =>
     apiService.fetchAllInfoAboutFilm(id).then(response => {
-      //   const parsedData = parseMoviesObject(response);
-      //   console.log(parsedData);
-      //   renderWatchedList(parsedData);
-      console.log(response);
-      //   renderWatchedList(response);
+      renderWatchedList(response);
     }),
   );
-
   function renderWatchedList(response) {
-    const markup = movieTpl(response);
+    const markup = lib(response);
     refs.gallery.insertAdjacentHTML('beforeend', markup);
   }
 }

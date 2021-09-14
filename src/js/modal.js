@@ -1,6 +1,7 @@
 import refs from './refs';
 import API from './apiService';
 import modalCard from '../templates/modal-card.hbs';
+import showWatchedList from './library-sm';
 const apiService = new API();
 // ====== localStorage ======
 // import LocalStorageUtil from './localStorage';
