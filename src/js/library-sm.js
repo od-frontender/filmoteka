@@ -15,12 +15,19 @@ function showLibrary() {
   refs.headerBckgr.classList.add('library__background');
   refs.headerSearchInputWrapper.classList.add('visually-hidden');
   refs.watchedBtnLibrary.classList.remove('visually-hidden');
+  refs.watchedBtnLibrary.classList.remove('activeBtn');
   refs.queueBtnLibrary.classList.remove('visually-hidden');
+  refs.queueBtnLibrary.classList.remove('activeBtn');
   refs.homeBtn.classList.remove('current');
   refs.libraryBtn.classList.add('current');
-  refs.gallery.innerHTML = '';
+  refs.gallery.innerHTML = '<h2 style="margin: 0 auto;">Choose watched or queued movies!</h2>';
   refs.loadMoreBtn.classList.add('visually-hidden');
 }
+
+// function onEmptyList() {
+//   refs.gallery.innerHTML =
+//     '<h2 style="margin: 0 auto;">You May Contain This List by Yourself at Homepage...</h2>';
+// }
 
 function showMaimPage() {
   refs.headerBckgr.classList.add('header__background');

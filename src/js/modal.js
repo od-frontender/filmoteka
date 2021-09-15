@@ -42,18 +42,20 @@ function renderMovieCard(response) {
   queueBtnModal.addEventListener('click', onQueue);
 }
 
+// отрисовка галереи просмотренных фильмов
 function onWatched(e) {
   const filmId = e.path[4].id;
 
   putWatched(filmId);
-  // changeWatchedBtn(filmId);
+  changeWatchedBtn(filmId);
 }
 
+// отрисовка галереи фильмов в очереди на просмотр
 function onQueue(e) {
   const filmId = e.path[4].id;
 
   putQueue(filmId);
-  // changeQueueBtn(filmId);
+  changeQueueBtn(filmId);
 }
 
 function getWatched() {
@@ -72,49 +74,60 @@ function getQueue() {
   return [];
 }
 
-function putWatched(id) {
-  const watchedBtnModal = document.querySelector('.modal-watched-button');
-  const queueBtnModal = document.querySelector('.modal-queue-button');
-  const watchedMovie = getWatched();
-  const queueMovie = getQueue();
-  const watchedIndex = watchedMovie.indexOf(id);
-  const queueIndex = queueMovie.indexOf(id);
-  if (queueIndex === -1) {
-    if (watchedIndex === -1) {
-      watchedMovie.push(id);
-      watchedBtnModal.classList.add('modal-button__active');
-      watchedBtnModal.textContent = 'Remove from watched';
-    } else {
-      watchedMovie.splice(watchedIndex, 1);
-      watchedBtnModal.classList.remove('modal-button__active');
-      watchedBtnModal.textContent = 'Add to watched';
-    }
-  } else {
-    queueMovie.splice(queueIndex, 1);
-    queueBtnModal.classList.remove('modal-button__active');
-    queueBtnModal.textContent = 'Add to queue';
-    watchedBtnModal.classList.add('modal-button__active');
-    watchedBtnModal.textContent = 'Remove from watched';
-  }
+// // добавление/удаление ID фильмов в/из списка просмотренных
+// function putWatched(id) {
+//   // const watchedBtnModal = document.querySelector('.modal-watched-button');
+//   // const queueBtnModal = document.querySelector('.modal-queue-button');
+//   const watchedMovie = getWatched();
+//   const queueMovie = getQueue();
+//   const watchedIndex = watchedMovie.indexOf(id);
+//   const queueIndex = queueMovie.indexOf(id);
+//   if (queueIndex === -1) {
+//     if (watchedIndex === -1) {
+//       watchedMovie.push(id);
+//       // watchedBtnModal.classList.add('modal-button__active');
+//       // watchedBtnModal.textContent = 'Remove from watched';
+//     }
+//     if (watchedIndex !== -1) {
+//       watchedMovie.splice(watchedIndex, 1);
+//       // watchedBtnModal.classList.remove('modal-button__active');
+//       // watchedBtnModal.textContent = 'Add to watched';
+//     }
+//   } else {
+//     queueMovie.splice(queueIndex, 1);
+//     watchedMovie.push(id);
+//     // queueBtnModal.classList.remove('modal-button__active');
+//     // queueBtnModal.textContent = 'Add to queue';
+//     // watchedBtnModal.classList.add('modal-button__active');
+//     // watchedBtnModal.textContent = 'Remove from watched';
+//   }
 
+//   localStorage.setItem('Watched', JSON.stringify(watchedMovie));
+// }
+
+// добавление/удаление ID фильмов в/из списка просмотренных
+function putWatched(id) {
+  const watchedMovie = getWatched();
+  const watchedIndex = watchedMovie.indexOf(id);
+
+  if (watchedIndex === -1) {
+    watchedMovie.push(id);
+  } else {
+    watchedMovie.splice(watchedIndex, 1);
+  }
   localStorage.setItem('Watched', JSON.stringify(watchedMovie));
 }
 
+// добавление/удаление ID фильмов в/из очереди
 function putQueue(id) {
-  const queueBtnModal = document.querySelector('.modal-queue-button');
   const queueMovie = getQueue();
-  const index = queueMovie.indexOf(id);
+  const queueIndex = queueMovie.indexOf(id);
 
-  if (index === -1) {
+  if (queueIndex === -1) {
     queueMovie.push(id);
-    queueBtnModal.classList.add('modal-button__active');
-    queueBtnModal.textContent = 'Remove from queue';
   } else {
-    queueMovie.splice(index, 1);
-    queueBtnModal.classList.remove('modal-button__active');
-    queueBtnModal.textContent = 'Add to queue';
+    queueMovie.splice(queueIndex, 1);
   }
-
   localStorage.setItem('Queue', JSON.stringify(queueMovie));
 }
 
