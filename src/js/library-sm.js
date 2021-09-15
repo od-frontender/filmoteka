@@ -44,7 +44,7 @@ function showMainPage() {
   refs.error.classList.add('visually-hidden');
   refs.gallery.innerHTML = '';
   apiService.resetPage();
-  showGallery();
+  // showGallery();
 }
 
 refs.watchedBtnLibrary.addEventListener('click', showWatchedList);

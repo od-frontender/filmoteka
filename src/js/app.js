@@ -6,7 +6,8 @@ import parseMoviesObject from './filterGenres';
 const apiService = new API();
 import { showMainPage } from './library-sm';
 
-refs.logo.addEventListener('click', showMainPage);
+refs.logo.addEventListener('click', resetAll);
+refs.homeBtn.addEventListener('click', resetAll);
 
 // Функция выводит список популярных фильмов на основную старницу
 export default function showGallery() {
@@ -28,12 +29,9 @@ function onLoadMore() {
   apiService.incrementPage();
   showGallery();
 }
-//функция отрысовует галерею
 
-// function showMainPage() {
-//   refs.gallery.innerHTML = '';
-//   apiService.resetPage();
-//   showGallery();
-//   refs.loadMoreBtn.classList.remove('visually-hidden');
-//   refs.loadMoreToSearchBtn.classList.add('visually-hidden');
-// }
+function resetAll() {
+  apiService.resetPage();
+  showMainPage();
+  showGallery();
+}
