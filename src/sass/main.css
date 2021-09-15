@@ -1391,6 +1391,8 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #fff;
+  color: black;
 }
 
 .students-list__item__descr__link {
