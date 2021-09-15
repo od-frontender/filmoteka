@@ -147,5 +147,6 @@
   .students-list__item__image {
     width: 160px;
     height: 160px;
+    object-fit: cover; // Саша - коррекция пропорций фотографий
   }
 }
