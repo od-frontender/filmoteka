@@ -30,6 +30,7 @@ export default function showMainPage() {
   refs.loadMoreToSearchBtn.classList.add('visually-hidden');
   refs.loadMoreBtn.classList.remove('visually-hidden');
   refs.gallery.innerHTML = '';
+  refs.error.classList.add('visually-hidden');
   apiService.resetPage();
   showGallery();
 }

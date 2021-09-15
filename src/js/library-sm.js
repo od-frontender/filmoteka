@@ -3,12 +3,11 @@ import showGallery from './app';
 import API from './apiService';
 import LocalStorageUtil from './localStorage';
 import lib from '../templates/lib.hbs';
-
 const apiService = new API();
 const localStorageUtil = new LocalStorageUtil();
 
 refs.libraryBtn.addEventListener('click', showLibrary);
-refs.homeBtn.addEventListener('click', showMaimPage);
+refs.homeBtn.addEventListener('click', showMainPage);
 
 function showLibrary() {
   refs.headerBckgr.classList.remove('header__background');
@@ -20,8 +19,11 @@ function showLibrary() {
   refs.queueBtnLibrary.classList.remove('activeBtn');
   refs.homeBtn.classList.remove('current');
   refs.libraryBtn.classList.add('current');
-  refs.gallery.innerHTML = '<h2 style="margin: 0 auto;">Choose watched or queued movies!</h2>';
+  // refs.gallery.innerHTML = '<h2 style="margin: 0 auto;">Choose watched or queued movies!</h2>';
   refs.loadMoreBtn.classList.add('visually-hidden');
+  refs.error.classList.add('visually-hidden');
+  refs.gallery.innerHTML = '';
+  apiService.resetPage();
 }
 
 // function onEmptyList() {
@@ -29,7 +31,7 @@ function showLibrary() {
 //     '<h2 style="margin: 0 auto;">You May Contain This List by Yourself at Homepage...</h2>';
 // }
 
-function showMaimPage() {
+function showMainPage() {
   refs.headerBckgr.classList.add('header__background');
   refs.headerBckgr.classList.remove('library__background');
   refs.headerSearchInputWrapper.classList.remove('visually-hidden');
@@ -38,6 +40,9 @@ function showMaimPage() {
   refs.homeBtn.classList.add('current');
   refs.libraryBtn.classList.remove('current');
   refs.loadMoreToSearchBtn.classList.add('visually-hidden');
+  refs.loadMoreBtn.classList.remove('visually-hidden');
+  refs.error.classList.add('visually-hidden');
+  refs.gallery.innerHTML = '';
   apiService.resetPage();
   showGallery();
 }
@@ -83,4 +88,4 @@ function renderQueueList(response) {
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-export { showWatchedList, showQueueList };
+export { showWatchedList, showQueueList, showMainPage };

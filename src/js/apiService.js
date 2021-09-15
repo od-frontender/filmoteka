@@ -12,7 +12,6 @@ export default class API {
     return fetch(url)
       .then(res => res.json())
       .then(res => {
-        // this.incrementPage();
         return res;
       })
       .catch(err => console.log(err));

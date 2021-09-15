@@ -4,7 +4,7 @@ import API from './apiService';
 import parseMoviesObject from './filterGenres';
 // import qwerty from './loader';
 const apiService = new API();
-import showMainPage from './library';
+import { showMainPage } from './library-sm';
 
 refs.logo.addEventListener('click', showMainPage);
 
